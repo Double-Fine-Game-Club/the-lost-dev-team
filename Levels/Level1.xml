@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://Assets/sounds/Streams/Music/Elevator Madness.ogg" type="AudioStream" index="10"></ext_resource>
+	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="6"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/snd_boxy_girl/kiss1.wav" type="Sample" index="9"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="7"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/snd_boxy_girl/femyawn_ed.wav" type="Sample" index="8"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="5"></ext_resource>
+	<ext_resource path="res://Assets/scripts/platformer.gd" type="Script" index="0"></ext_resource>
+	<resource type="RectangleShape2D" path="local://4">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 10, 10 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://1">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 10.954, 10.7872 </vector2>
+
+	</resource>
+	<resource type="SampleLibrary" path="local://5">
+		<dictionary name="samples/jump" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="5">  </resource>
+		</dictionary>
+		<dictionary name="samples/jump2" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="6">  </resource>
+		</dictionary>
+		<dictionary name="samples/jump3" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="7">  </resource>
+		</dictionary>
+
+	</resource>
+	<resource type="SampleLibrary" path="local://3">
+		<dictionary name="samples/femyawn_ed" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="8">  </resource>
+		</dictionary>
+		<dictionary name="samples/kiss1" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="9">  </resource>
+		</dictionary>
+
+	</resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="121">
+				<string> "Node2D" </string>
+				<string> "transform/pos" </string>
+				<string> "z/relative" </string>
+				<string> "script/script" </string>
+				<string> "__meta__" </string>
+				<string> "move_speed" </string>
+				<string> "height_speed" </string>
+				<string> "next_level" </string>
+				<string> "Background" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "texture" </string>
+				<string> "stretch_mode" </string>
+				<string> "TextureFrame" </string>
+				<string> "Player" </string>
+				<string> "process/pause_mode" </string>
+				<string> "input/pickable" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
+				<string> "collision/layers" </string>
+				<string> "collision/mask" </string>
+				<string> "mode" </string>
+				<string> "mass" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
+				<string> "gravity_scale" </string>
+				<string> "custom_integrator" </string>
+				<string> "continuous_cd" </string>
+				<string> "contacts_reported" </string>
+				<string> "contact_monitor" </string>
+				<string> "sleeping" </string>
+				<string> "can_sleep" </string>
+				<string> "velocity/linear" </string>
+				<string> "velocity/angular" </string>
+				<string> "damp_override/linear" </string>
+				<string> "damp_override/angular" </string>
+				<string> "RigidBody2D" </string>
+				<string> "Sprite" </string>
+				<string> "transform/scale" </string>
+				<string> "CollisionShape2D" </string>
+				<string> "shape" </string>
+				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
+				<string> "RayCast2D" </string>
+				<string> "enabled" </string>
+				<string> "cast_to" </string>
+				<string> "layer_mask" </string>
+				<string> "type_mask" </string>
+				<string> "Camera2D" </string>
+				<string> "anchor_mode" </string>
+				<string> "rotating" </string>
+				<string> "current" </string>
+				<string> "zoom" </string>
+				<string> "limit/left" </string>
+				<string> "limit/top" </string>
+				<string> "limit/right" </string>
+				<string> "limit/bottom" </string>
+				<string> "drag_margin/h_enabled" </string>
+				<string> "drag_margin/v_enabled" </string>
+				<string> "smoothing/enable" </string>
+				<string> "smoothing/speed" </string>
+				<string> "drag_margin/left" </string>
+				<string> "drag_margin/top" </string>
+				<string> "drag_margin/right" </string>
+				<string> "drag_margin/bottom" </string>
+				<string> "Platforms" </string>
+				<string> "Prototype1" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "StaticBody2D" </string>
+				<string> "expand" </string>
+				<string> "Platform1" </string>
+				<string> "visibility/behind_parent" </string>
+				<string> "Platform2" </string>
+				<string> "Tower" </string>
+				<string> "Ground" </string>
+				<string> "AnimationPlayer" </string>
+				<string> "playback/process_mode" </string>
+				<string> "playback/default_blend_time" </string>
+				<string> "root/root" </string>
+				<string> "playback/active" </string>
+				<string> "playback/speed" </string>
+				<string> "blend_times" </string>
+				<string> "autoplay" </string>
+				<string> "SamplePlayer" </string>
+				<string> "config/polyphony" </string>
+				<string> "config/samples" </string>
+				<string> "default/volume_db" </string>
+				<string> "default/pitch_scale" </string>
+				<string> "default/pan" </string>
+				<string> "default/depth" </string>
+				<string> "default/height" </string>
+				<string> "default/filter/type" </string>
+				<string> "default/filter/cutoff" </string>
+				<string> "default/filter/resonance" </string>
+				<string> "default/filter/gain" </string>
+				<string> "default/reverb_room" </string>
+				<string> "default/reverb_send" </string>
+				<string> "default/chorus_send" </string>
+				<string> "SamplePlayer 2" </string>
+				<string> "StreamPlayer" </string>
+				<string> "stream/stream" </string>
+				<string> "stream/play" </string>
+				<string> "stream/loop" </string>
+				<string> "stream/volume_db" </string>
+				<string> "stream/autoplay" </string>
+				<string> "stream/paused" </string>
+				<string> "stream/loop_restart_time" </string>
+				<string> "stream/buffering_ms" </string>
+				<string> "Timer" </string>
+				<string> "process_mode" </string>
+				<string> "wait_time" </string>
+				<string> "one_shot" </string>
+				<string> "autostart" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 25 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="619"> 				-1, -1, 0, 0, -1, 7, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 0, 0, 0, 19, 8, -1, 10, 9, 7, 10, 7, 11, 8, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0, 0, 0, 43, 20, -1, 23, 21, 15, 1, 16, 22, 1, 23, 17, 24, 18, 25, 1, 26, 15, 27, 15, 28, 14, 29, 19, 30, 20, 31, 20, 32, 21, 33, 1, 34, 14, 35, 14, 36, 1, 37, 1, 38, 7, 39, 22, 40, 23, 41, 24, 42, 24, 0, 2, 0, 44, 44, -1, 3, 1, 25, 45, 26, 17, 27, 0, 2, 0, 46, 46, -1, 5, 1, 28, 45, 29, 47, 17, 48, 1, 49, 14, 0, 2, 0, 50, 50, -1, 6, 1, 30, 45, 31, 51, 7, 52, 32, 53, 15, 54, 33, 0, 2, 0, 55, 55, -1, 18, 1, 34, 45, 35, 56, 15, 57, 1, 58, 7, 59, 36, 60, 37, 61, 37, 62, 38, 63, 38, 64, 7, 65, 7, 66, 7, 67, 20, 68, 39, 69, 39, 70, 39, 71, 39, 0, 0, 0, 0, 72, -1, 0, 0, 7, 0, 76, 73, -1, 11, 1, 40, 22, 1, 23, 41, 24, 42, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 8, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 43, 14, 44, 15, 45, 16, 46, 17, 47, 77, 7, 18, 14, 0, 8, 0, 46, 46, -1, 5, 1, 48, 45, 49, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 78, -1, 11, 1, 50, 22, 1, 23, 41, 24, 51, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 11, 0, 46, 46, -1, 6, 79, 7, 1, 52, 45, 53, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 80, -1, 11, 1, 54, 22, 1, 23, 41, 24, 55, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 13, 0, 46, 46, -1, 5, 1, 56, 45, 57, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 81, -1, 11, 1, 40, 22, 1, 23, 41, 24, 58, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 15, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 59, 14, 60, 15, 61, 16, 62, 17, 63, 77, 7, 18, 14, 0, 15, 0, 46, 46, -1, 5, 1, 64, 45, 49, 47, 41, 48, 1, 49, 14, 0, 0, 0, 76, 82, -1, 11, 1, 65, 22, 1, 23, 41, 24, 66, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 18, 0, 46, 46, -1, 5, 1, 67, 45, 68, 47, 41, 48, 1, 49, 14, 0, 0, 0, 83, 83, -1, 7, 84, 15, 85, 23, 86, 69, 87, 7, 88, 19, 89, 70, 90, 71, 0, 0, 0, 91, 91, -1, 14, 92, 15, 93, 72, 94, 23, 95, 19, 96, 23, 97, 23, 98, 23, 99, 14, 100, 23, 101, 23, 102, 23, 103, 8, 104, 23, 105, 23, 0, 0, 0, 91, 106, -1, 14, 92, 15, 93, 73, 94, 23, 95, 19, 96, 23, 97, 23, 98, 23, 99, 14, 100, 23, 101, 23, 102, 23, 103, 8, 104, 23, 105, 23, 0, 0, 0, 107, 107, -1, 8, 108, 74, 109, 7, 110, 7, 111, 19, 112, 7, 113, 1, 114, 23, 115, 75, 0, 0, 0, 116, 116, -1, 4, 117, 15, 118, 76, 119, 1, 120, 1, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="77" shared="false">
+				<vector2> 0, -33 </vector2>
+				<bool> False </bool>
+				<resource  external="0">  </resource>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_screen__" </string>
+					<string> "Script" </string>
+				</dictionary>
+				<int> 200 </int>
+				<int> -1000 </int>
+				<string> "res://Levels/Level2.xml" </string>
+				<bool> True </bool>
+				<int> 2 </int>
+				<real> -925 </real>
+				<real> -709 </real>
+				<real> 3075 </real>
+				<real> 1791 </real>
+				<resource  external="1">  </resource>
+				<int> 0 </int>
+				<int> 1 </int>
+				<vector2> 214.272, 225.477 </vector2>
+				<resource  resource_type="Shape2D" path="local://4">  </resource>
+				<matrix32> 8.31201, -0, 0, 9.7, -18.8994, 223.143 </matrix32>
+				<real> 1 </real>
+				<real> 0.5 </real>
+				<real> 10 </real>
+				<vector2> 0, 0 </vector2>
+				<real> 0 </real>
+				<real> -1 </real>
+				<vector2> -23.5292, 235.412 </vector2>
+				<vector2> 0.436694, 0.453309 </vector2>
+				<resource  external="2">  </resource>
+				<vector2> -18.8994, 223.143 </vector2>
+				<vector2> 8.31201, 9.7 </vector2>
+				<vector2> -19.9027, 232.231 </vector2>
+				<vector2> 2.55608, 3.2306 </vector2>
+				<vector2> 0, 50 </vector2>
+				<int> 15 </int>
+				<vector2> -18.7667, 226.551 </vector2>
+				<vector2> 2.59158, 3.1241 </vector2>
+				<vector2> 1, 1 </vector2>
+				<int> -10000000 </int>
+				<int> 10000000 </int>
+				<real> 0.2 </real>
+				<vector2> 603.36, 531.117 </vector2>
+				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<matrix32> 21.9856, -0, 0, 34.2775, -731.755, -333.428 </matrix32>
+				<real> -867 </real>
+				<real> -569 </real>
+				<real> -489 </real>
+				<real> 17 </real>
+				<resource  external="3">  </resource>
+				<vector2> -731.755, -333.428 </vector2>
+				<vector2> 21.9856, 34.2775 </vector2>
+				<vector2> 594.36, 525.117 </vector2>
+				<matrix32> 30.5781, -0, 0, 2.69231, -278.053, 44.3459 </matrix32>
+				<vector2> -278.053, 44.3459 </vector2>
+				<vector2> 30.5781, 2.69231 </vector2>
+				<vector2> 1142.91, 732 </vector2>
+				<matrix32> 67.8167, -0, 0, 2.59221, 1119.63, -150.081 </matrix32>
+				<vector2> 1119.63, -150.081 </vector2>
+				<vector2> 67.8167, 2.59221 </vector2>
+				<matrix32> 21.9856, -0, 0, 34.2775, 1437.89, -291.381 </matrix32>
+				<real> 983 </real>
+				<real> -496 </real>
+				<real> 1658 </real>
+				<real> 1110 </real>
+				<resource  external="4">  </resource>
+				<vector2> 1437.89, -291.381 </vector2>
+				<vector2> 422, 1102 </vector2>
+				<matrix32> 302.692, -0, 0, 4.10721, 673, -62.641 </matrix32>
+				<vector2> 673, -62.641 </vector2>
+				<vector2> 302.692, 4.10721 </vector2>
+				<node_path> ".." </node_path>
+				<array  len="0" shared="false">
+				</array>
+				<string> "" </string>
+				<resource  resource_type="SampleLibrary" path="local://5">  </resource>
+				<resource  resource_type="SampleLibrary" path="local://3">  </resource>
+				<resource  external="10">  </resource>
+				<int> 500 </int>
+				<real> 3 </real>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>
