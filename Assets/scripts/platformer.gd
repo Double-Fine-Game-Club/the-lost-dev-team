@@ -17,7 +17,6 @@ var hearts
 var kissable = true
 var timer
 var player_sprite
-var label
 export var height_speed = -1000
 # This variable is exported so we can change it for each level
 export var next_level = ''
@@ -30,9 +29,6 @@ func _ready():
 	# Make sure to always enable the _process() function. This is your game loop.
 	set_process(true)
 	current_level = get_tree().get_current_scene().get_filename()
-	print(current_level)
-	label = Label.new()
-	label.set_text(current_level)
 	# Now we set nodes to those variables we created:
 	# Get the player node. It is a RigidBody node.
 	# The player node should have Sprite,CollisionShape2D, and RayCast2D nodes as children
@@ -48,7 +44,6 @@ func _ready():
 	player.set_mode(2)
 	# If you want the player to have sound effects, you have to store them in a sample player node
 	player_samples = get_node("SamplePlayer")
-	player.add_child(label)
 	
 	# The computer node is just a duplicate of the Player node.
 	#computer = get_node("Computer")

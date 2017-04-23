@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
-	<ext_resource path="res://Assets/sounds/Streams/Music/Elevator Madness.ogg" type="AudioStream" index="10"></ext_resource>
-	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
+<resource_file type="PackedScene" subresource_count="14" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
 	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="6"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/snd_boxy_girl/kiss1.wav" type="Sample" index="9"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Streams/Music/Elevator Madness.ogg" type="AudioStream" index="8"></ext_resource>
+	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="7"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/snd_boxy_girl/femyawn_ed.wav" type="Sample" index="8"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="5"></ext_resource>
 	<ext_resource path="res://Assets/scripts/platformer.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="5"></ext_resource>
+	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="3"></ext_resource>
 	<resource type="RectangleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 10, 10 </vector2>
@@ -63,8 +61,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="8">  </resource>
-		</dictionary>
+			<resource name=""></resource>		</dictionary>
 		<dictionary name="samples/kiss1" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -73,8 +70,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="9">  </resource>
-		</dictionary>
+			<resource name=""></resource>		</dictionary>
 
 	</resource>
 	<main_resource>
@@ -87,7 +83,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="121">
+			<string_array  len="120">
 				<string> "Node2D" </string>
 				<string> "transform/pos" </string>
 				<string> "z/relative" </string>
@@ -109,7 +105,7 @@
 				<string> "stretch_mode" </string>
 				<string> "TextureFrame" </string>
 				<string> "Player" </string>
-				<string> "process/pause_mode" </string>
+				<string> "transform/scale" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
@@ -133,7 +129,6 @@
 				<string> "damp_override/angular" </string>
 				<string> "RigidBody2D" </string>
 				<string> "Sprite" </string>
-				<string> "transform/scale" </string>
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
@@ -216,7 +211,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="619"> 				-1, -1, 0, 0, -1, 7, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 0, 0, 0, 19, 8, -1, 10, 9, 7, 10, 7, 11, 8, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0, 0, 0, 43, 20, -1, 23, 21, 15, 1, 16, 22, 1, 23, 17, 24, 18, 25, 1, 26, 15, 27, 15, 28, 14, 29, 19, 30, 20, 31, 20, 32, 21, 33, 1, 34, 14, 35, 14, 36, 1, 37, 1, 38, 7, 39, 22, 40, 23, 41, 24, 42, 24, 0, 2, 0, 44, 44, -1, 3, 1, 25, 45, 26, 17, 27, 0, 2, 0, 46, 46, -1, 5, 1, 28, 45, 29, 47, 17, 48, 1, 49, 14, 0, 2, 0, 50, 50, -1, 6, 1, 30, 45, 31, 51, 7, 52, 32, 53, 15, 54, 33, 0, 2, 0, 55, 55, -1, 18, 1, 34, 45, 35, 56, 15, 57, 1, 58, 7, 59, 36, 60, 37, 61, 37, 62, 38, 63, 38, 64, 7, 65, 7, 66, 7, 67, 20, 68, 39, 69, 39, 70, 39, 71, 39, 0, 0, 0, 0, 72, -1, 0, 0, 7, 0, 76, 73, -1, 11, 1, 40, 22, 1, 23, 41, 24, 42, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 8, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 43, 14, 44, 15, 45, 16, 46, 17, 47, 77, 7, 18, 14, 0, 8, 0, 46, 46, -1, 5, 1, 48, 45, 49, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 78, -1, 11, 1, 50, 22, 1, 23, 41, 24, 51, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 11, 0, 46, 46, -1, 6, 79, 7, 1, 52, 45, 53, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 80, -1, 11, 1, 54, 22, 1, 23, 41, 24, 55, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 13, 0, 46, 46, -1, 5, 1, 56, 45, 57, 47, 41, 48, 1, 49, 14, 0, 7, 0, 76, 81, -1, 11, 1, 40, 22, 1, 23, 41, 24, 58, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 15, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 59, 14, 60, 15, 61, 16, 62, 17, 63, 77, 7, 18, 14, 0, 15, 0, 46, 46, -1, 5, 1, 64, 45, 49, 47, 41, 48, 1, 49, 14, 0, 0, 0, 76, 82, -1, 11, 1, 65, 22, 1, 23, 41, 24, 66, 25, 1, 26, 15, 27, 15, 74, 22, 75, 23, 30, 19, 31, 23, 0, 18, 0, 46, 46, -1, 5, 1, 67, 45, 68, 47, 41, 48, 1, 49, 14, 0, 0, 0, 83, 83, -1, 7, 84, 15, 85, 23, 86, 69, 87, 7, 88, 19, 89, 70, 90, 71, 0, 0, 0, 91, 91, -1, 14, 92, 15, 93, 72, 94, 23, 95, 19, 96, 23, 97, 23, 98, 23, 99, 14, 100, 23, 101, 23, 102, 23, 103, 8, 104, 23, 105, 23, 0, 0, 0, 91, 106, -1, 14, 92, 15, 93, 73, 94, 23, 95, 19, 96, 23, 97, 23, 98, 23, 99, 14, 100, 23, 101, 23, 102, 23, 103, 8, 104, 23, 105, 23, 0, 0, 0, 107, 107, -1, 8, 108, 74, 109, 7, 110, 7, 111, 19, 112, 7, 113, 1, 114, 23, 115, 75, 0, 0, 0, 116, 116, -1, 4, 117, 15, 118, 76, 119, 1, 120, 1, 0 </int_array>
+			<int_array  len="619"> 				-1, -1, 0, 0, -1, 7, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 0, 0, 0, 19, 8, -1, 10, 9, 7, 10, 7, 11, 8, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0, 0, 0, 43, 20, -1, 23, 1, 15, 21, 16, 22, 1, 23, 17, 24, 18, 25, 1, 26, 19, 27, 19, 28, 14, 29, 20, 30, 21, 31, 21, 32, 22, 33, 1, 34, 14, 35, 14, 36, 1, 37, 1, 38, 7, 39, 23, 40, 24, 41, 25, 42, 25, 0, 2, 0, 44, 44, -1, 3, 1, 26, 21, 27, 17, 28, 0, 2, 0, 45, 45, -1, 5, 1, 29, 21, 30, 46, 17, 47, 1, 48, 14, 0, 2, 0, 49, 49, -1, 6, 1, 31, 21, 32, 50, 7, 51, 33, 52, 19, 53, 34, 0, 2, 0, 54, 54, -1, 18, 1, 35, 21, 36, 55, 19, 56, 1, 57, 7, 58, 37, 59, 38, 60, 38, 61, 39, 62, 39, 63, 7, 64, 7, 65, 7, 66, 21, 67, 40, 68, 40, 69, 40, 70, 40, 0, 0, 0, 0, 71, -1, 0, 0, 7, 0, 75, 72, -1, 11, 1, 41, 22, 1, 23, 42, 24, 43, 25, 1, 26, 19, 27, 19, 73, 23, 74, 24, 30, 20, 31, 24, 0, 8, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 44, 14, 45, 15, 46, 16, 47, 17, 48, 76, 7, 18, 14, 0, 8, 0, 45, 45, -1, 5, 1, 49, 21, 50, 46, 42, 47, 1, 48, 14, 0, 7, 0, 75, 77, -1, 11, 1, 51, 22, 1, 23, 42, 24, 52, 25, 1, 26, 19, 27, 19, 73, 23, 74, 24, 30, 20, 31, 24, 0, 11, 0, 45, 45, -1, 6, 78, 7, 1, 53, 21, 54, 46, 42, 47, 1, 48, 14, 0, 7, 0, 75, 79, -1, 11, 1, 55, 22, 1, 23, 42, 24, 56, 25, 1, 26, 19, 27, 19, 73, 23, 74, 24, 30, 20, 31, 24, 0, 13, 0, 45, 45, -1, 5, 1, 57, 21, 58, 46, 42, 47, 1, 48, 14, 0, 7, 0, 75, 80, -1, 11, 1, 41, 22, 1, 23, 42, 24, 59, 25, 1, 26, 19, 27, 19, 73, 23, 74, 24, 30, 20, 31, 24, 0, 15, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 60, 14, 61, 15, 62, 16, 63, 17, 64, 76, 7, 18, 14, 0, 15, 0, 45, 45, -1, 5, 1, 65, 21, 50, 46, 42, 47, 1, 48, 14, 0, 0, 0, 75, 81, -1, 11, 1, 66, 22, 1, 23, 42, 24, 67, 25, 1, 26, 19, 27, 19, 73, 23, 74, 24, 30, 20, 31, 24, 0, 18, 0, 45, 45, -1, 5, 1, 68, 21, 69, 46, 42, 47, 1, 48, 14, 0, 0, 0, 82, 82, -1, 7, 83, 19, 84, 24, 85, 70, 86, 7, 87, 20, 88, 71, 89, 72, 0, 0, 0, 90, 90, -1, 14, 91, 19, 92, 73, 93, 24, 94, 20, 95, 24, 96, 24, 97, 24, 98, 14, 99, 24, 100, 24, 101, 24, 102, 8, 103, 24, 104, 24, 0, 0, 0, 90, 105, -1, 14, 91, 19, 92, 74, 93, 24, 94, 20, 95, 24, 96, 24, 97, 24, 98, 14, 99, 24, 100, 24, 101, 24, 102, 8, 103, 24, 104, 24, 0, 0, 0, 106, 106, -1, 8, 107, 75, 108, 7, 109, 7, 110, 20, 111, 7, 112, 1, 113, 24, 114, 4, 0, 0, 0, 115, 115, -1, 4, 116, 19, 117, 76, 118, 1, 119, 1, 0 </int_array>
 			<string> "variants" </string>
 			<array  len="77" shared="false">
 				<vector2> 0, -33 </vector2>
@@ -226,7 +221,7 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
 				</dictionary>
-				<int> 200 </int>
+				<int> 500 </int>
 				<int> -1000 </int>
 				<string> "res://Levels/Level2.xml" </string>
 				<bool> True </bool>
@@ -237,26 +232,27 @@
 				<real> 1791 </real>
 				<resource  external="1">  </resource>
 				<int> 0 </int>
-				<int> 1 </int>
-				<vector2> 214.272, 225.477 </vector2>
+				<vector2> 0, -11.2603 </vector2>
+				<vector2> 1, 1.02049 </vector2>
 				<resource  resource_type="Shape2D" path="local://4">  </resource>
-				<matrix32> 8.31201, -0, 0, 9.7, -18.8994, 223.143 </matrix32>
+				<matrix32> 8.31201, -0, 0, 9.7, 195.373, 448.62 </matrix32>
+				<int> 1 </int>
 				<real> 1 </real>
 				<real> 0.5 </real>
-				<real> 10 </real>
+				<real> 20 </real>
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
 				<real> -1 </real>
-				<vector2> -23.5292, 235.412 </vector2>
+				<vector2> 190.743, 460.889 </vector2>
 				<vector2> 0.436694, 0.453309 </vector2>
 				<resource  external="2">  </resource>
-				<vector2> -18.8994, 223.143 </vector2>
+				<vector2> 195.373, 448.62 </vector2>
 				<vector2> 8.31201, 9.7 </vector2>
-				<vector2> -19.9027, 232.231 </vector2>
+				<vector2> 194.369, 457.708 </vector2>
 				<vector2> 2.55608, 3.2306 </vector2>
 				<vector2> 0, 50 </vector2>
 				<int> 15 </int>
-				<vector2> -18.7667, 226.551 </vector2>
+				<vector2> 195.505, 452.028 </vector2>
 				<vector2> 2.59158, 3.1241 </vector2>
 				<vector2> 1, 1 </vector2>
 				<int> -10000000 </int>
@@ -264,18 +260,18 @@
 				<real> 0.2 </real>
 				<vector2> 603.36, 531.117 </vector2>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 21.9856, -0, 0, 34.2775, -731.755, -333.428 </matrix32>
+				<matrix32> 21.9856, -0, 0, 34.2775, -731.755, -336.428 </matrix32>
 				<real> -867 </real>
 				<real> -569 </real>
 				<real> -489 </real>
 				<real> 17 </real>
 				<resource  external="3">  </resource>
-				<vector2> -731.755, -333.428 </vector2>
+				<vector2> -731.755, -336.428 </vector2>
 				<vector2> 21.9856, 34.2775 </vector2>
 				<vector2> 594.36, 525.117 </vector2>
-				<matrix32> 30.5781, -0, 0, 2.69231, -278.053, 44.3459 </matrix32>
-				<vector2> -278.053, 44.3459 </vector2>
-				<vector2> 30.5781, 2.69231 </vector2>
+				<matrix32> 30.5781, -0, 0, 2.03182, -278.053, 53.4522 </matrix32>
+				<vector2> -278.053, 53.4522 </vector2>
+				<vector2> 30.5781, 2.03182 </vector2>
 				<vector2> 1142.91, 732 </vector2>
 				<matrix32> 67.8167, -0, 0, 2.59221, 1119.63, -150.081 </matrix32>
 				<vector2> 1119.63, -150.081 </vector2>
@@ -297,8 +293,7 @@
 				<string> "" </string>
 				<resource  resource_type="SampleLibrary" path="local://5">  </resource>
 				<resource  resource_type="SampleLibrary" path="local://3">  </resource>
-				<resource  external="10">  </resource>
-				<int> 500 </int>
+				<resource  external="8">  </resource>
 				<real> 3 </real>
 			</array>
 			<string> "version" </string>
