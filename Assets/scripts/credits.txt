@@ -1,0 +1,15 @@
+The Lost Dev Team
+
+Contributors
+
+Anenome
+Jennifer McMurray
+flesk
+Cheeseness
+lightsoda
+
+See github.com/double-fine-game-club/the-lost-dev-team for an up to date list of contributors and contributions
+
+Technologies
+
+This game uses the MIT licenced Godot engine. Visit godotengine.org for more information.

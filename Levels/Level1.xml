@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="14" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
-	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="6"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Streams/Music/Elevator Madness.ogg" type="AudioStream" index="8"></ext_resource>
-	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="7"></ext_resource>
-	<ext_resource path="res://Assets/scripts/platformer.gd" type="Script" index="0"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="5"></ext_resource>
-	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" index="8"></ext_resource>
 	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="5"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="7"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="6"></ext_resource>
+	<ext_resource path="res://Assets/scripts/platformer.gd" type="Script" index="0"></ext_resource>
 	<resource type="RectangleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 10, 10 </vector2>
