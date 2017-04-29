@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="15" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
-	<ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" index="9"></ext_resource>
+<resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" index="10"></ext_resource>
 	<ext_resource path="res://Assets/sprites/Musician/musician.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="7"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="6"></ext_resource>
-	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="8"></ext_resource>
+	<ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Assets/sprites/tower.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Assets/sprites/Coder/coder.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" index="8"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" index="7"></ext_resource>
+	<ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" index="9"></ext_resource>
 	<ext_resource path="res://Assets/scripts/platformer.gd" type="Script" index="0"></ext_resource>
 	<resource type="RectangleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
@@ -17,7 +18,7 @@
 	</resource>
 	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 10.954, 10.7872 </vector2>
+		<vector2 name="extents"> 99.0026, 6.55102 </vector2>
 
 	</resource>
 	<resource type="SampleLibrary" path="local://5">
@@ -29,7 +30,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="6">  </resource>
+			<resource  external="7">  </resource>
 		</dictionary>
 		<dictionary name="samples/jump2" shared="false">
 			<string> "db" </string>
@@ -39,7 +40,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="7">  </resource>
+			<resource  external="8">  </resource>
 		</dictionary>
 		<dictionary name="samples/jump3" shared="false">
 			<string> "db" </string>
@@ -49,7 +50,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="8">  </resource>
+			<resource  external="9">  </resource>
 		</dictionary>
 
 	</resource>
@@ -84,7 +85,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="121">
+			<string_array  len="122">
 				<string> "Node2D" </string>
 				<string> "transform/pos" </string>
 				<string> "z/relative" </string>
@@ -107,6 +108,7 @@
 				<string> "TextureFrame" </string>
 				<string> "Musician" </string>
 				<string> "expand" </string>
+				<string> "Coder" </string>
 				<string> "Player" </string>
 				<string> "transform/scale" </string>
 				<string> "input/pickable" </string>
@@ -208,14 +210,14 @@
 				<string> "autostart" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 26 </int>
+			<int> 27 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="648"> 				-1, -1, 0, 0, -1, 7, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 0, 0, 0, 19, 8, -1, 10, 9, 7, 10, 7, 11, 8, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0, 0, 0, 19, 20, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 15, 14, 16, 15, 17, 16, 18, 17, 19, 21, 7, 18, 14, 0, 0, 0, 45, 22, -1, 23, 1, 20, 23, 21, 24, 1, 25, 22, 26, 23, 27, 1, 28, 24, 29, 24, 30, 14, 31, 25, 32, 26, 33, 26, 34, 27, 35, 1, 36, 14, 37, 14, 38, 1, 39, 1, 40, 7, 41, 28, 42, 29, 43, 30, 44, 30, 0, 3, 0, 46, 46, -1, 3, 1, 31, 23, 32, 17, 33, 0, 3, 0, 47, 47, -1, 5, 1, 34, 23, 35, 48, 22, 49, 1, 50, 14, 0, 3, 0, 51, 51, -1, 6, 1, 36, 23, 37, 52, 7, 53, 38, 54, 24, 55, 39, 0, 3, 0, 56, 56, -1, 18, 1, 40, 23, 41, 57, 24, 58, 1, 59, 7, 60, 42, 61, 43, 62, 43, 63, 44, 64, 44, 65, 7, 66, 7, 67, 7, 68, 26, 69, 45, 70, 45, 71, 45, 72, 45, 0, 0, 0, 0, 73, -1, 0, 0, 8, 0, 77, 74, -1, 11, 1, 46, 24, 1, 25, 47, 26, 48, 27, 1, 28, 24, 29, 24, 75, 28, 76, 29, 32, 25, 33, 29, 0, 9, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 49, 14, 50, 15, 51, 16, 52, 17, 53, 21, 7, 18, 14, 0, 9, 0, 47, 47, -1, 5, 1, 54, 23, 55, 48, 47, 49, 1, 50, 14, 0, 8, 0, 77, 78, -1, 11, 1, 56, 24, 1, 25, 47, 26, 57, 27, 1, 28, 24, 29, 24, 75, 28, 76, 29, 32, 25, 33, 29, 0, 12, 0, 47, 47, -1, 6, 79, 7, 1, 58, 23, 59, 48, 47, 49, 1, 50, 14, 0, 8, 0, 77, 80, -1, 11, 1, 60, 24, 1, 25, 47, 26, 61, 27, 1, 28, 24, 29, 24, 75, 28, 76, 29, 32, 25, 33, 29, 0, 14, 0, 47, 47, -1, 5, 1, 62, 23, 63, 48, 47, 49, 1, 50, 14, 0, 8, 0, 77, 81, -1, 11, 1, 46, 24, 1, 25, 47, 26, 64, 27, 1, 28, 24, 29, 24, 75, 28, 76, 29, 32, 25, 33, 29, 0, 16, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 65, 14, 66, 15, 67, 16, 68, 17, 69, 21, 7, 18, 14, 0, 16, 0, 47, 47, -1, 5, 1, 70, 23, 55, 48, 47, 49, 1, 50, 14, 0, 0, 0, 77, 82, -1, 11, 1, 71, 24, 1, 25, 47, 26, 72, 27, 1, 28, 24, 29, 24, 75, 28, 76, 29, 32, 25, 33, 29, 0, 19, 0, 47, 47, -1, 5, 1, 73, 23, 74, 48, 47, 49, 1, 50, 14, 0, 0, 0, 83, 83, -1, 7, 84, 24, 85, 29, 86, 75, 87, 7, 88, 25, 89, 76, 90, 77, 0, 0, 0, 91, 91, -1, 14, 92, 24, 93, 78, 94, 29, 95, 25, 96, 29, 97, 29, 98, 29, 99, 14, 100, 29, 101, 29, 102, 29, 103, 8, 104, 29, 105, 29, 0, 0, 0, 91, 106, -1, 14, 92, 24, 93, 79, 94, 29, 95, 25, 96, 29, 97, 29, 98, 29, 99, 14, 100, 29, 101, 29, 102, 29, 103, 8, 104, 29, 105, 29, 0, 0, 0, 107, 107, -1, 8, 108, 80, 109, 7, 110, 7, 111, 25, 112, 7, 113, 1, 114, 29, 115, 4, 0, 0, 0, 116, 116, -1, 4, 117, 24, 118, 81, 119, 1, 120, 1, 0 </int_array>
+			<int_array  len="677"> 				-1, -1, 0, 0, -1, 7, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 0, 0, 0, 19, 8, -1, 10, 9, 7, 10, 7, 11, 8, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0, 0, 0, 19, 20, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 15, 14, 16, 15, 17, 16, 18, 17, 19, 21, 7, 18, 14, 0, 0, 0, 19, 22, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 20, 14, 21, 15, 22, 16, 18, 17, 23, 21, 7, 18, 14, 0, 0, 0, 46, 23, -1, 23, 1, 24, 24, 25, 25, 1, 26, 26, 27, 27, 28, 1, 29, 28, 30, 28, 31, 14, 32, 29, 33, 30, 34, 30, 35, 31, 36, 1, 37, 14, 38, 14, 39, 1, 40, 1, 41, 7, 42, 32, 43, 33, 44, 34, 45, 34, 0, 4, 0, 47, 47, -1, 3, 1, 35, 24, 36, 17, 37, 0, 4, 0, 48, 48, -1, 5, 1, 38, 24, 39, 49, 26, 50, 1, 51, 14, 0, 4, 0, 52, 52, -1, 6, 1, 40, 24, 41, 53, 7, 54, 42, 55, 28, 56, 43, 0, 4, 0, 57, 57, -1, 18, 1, 44, 24, 45, 58, 28, 59, 1, 60, 7, 61, 46, 62, 47, 63, 47, 64, 48, 65, 48, 66, 7, 67, 7, 68, 7, 69, 30, 70, 49, 71, 49, 72, 49, 73, 49, 0, 0, 0, 0, 74, -1, 0, 0, 9, 0, 78, 75, -1, 11, 1, 50, 25, 1, 26, 51, 27, 52, 28, 1, 29, 28, 30, 28, 76, 32, 77, 33, 33, 29, 34, 33, 0, 10, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 53, 14, 54, 15, 55, 16, 56, 17, 57, 21, 7, 18, 14, 0, 10, 0, 48, 48, -1, 5, 1, 58, 24, 59, 49, 51, 50, 1, 51, 14, 0, 9, 0, 78, 79, -1, 11, 1, 60, 25, 1, 26, 51, 27, 61, 28, 1, 29, 28, 30, 28, 76, 32, 77, 33, 33, 29, 34, 33, 0, 13, 0, 48, 48, -1, 6, 80, 7, 1, 62, 24, 63, 49, 51, 50, 1, 51, 14, 0, 9, 0, 78, 81, -1, 11, 1, 64, 25, 1, 26, 51, 27, 65, 28, 1, 29, 28, 30, 28, 76, 32, 77, 33, 33, 29, 34, 33, 0, 15, 0, 48, 48, -1, 5, 1, 66, 24, 67, 49, 51, 50, 1, 51, 14, 0, 9, 0, 78, 82, -1, 11, 1, 68, 25, 1, 26, 51, 27, 69, 28, 1, 29, 28, 30, 28, 76, 32, 77, 33, 33, 29, 34, 33, 0, 17, 0, 19, 19, -1, 11, 9, 7, 10, 7, 11, 8, 12, 8, 13, 70, 14, 71, 15, 72, 16, 73, 17, 74, 21, 7, 18, 14, 0, 17, 0, 48, 48, -1, 5, 1, 75, 24, 76, 49, 51, 50, 1, 51, 14, 0, 0, 0, 78, 83, -1, 11, 1, 77, 25, 1, 26, 51, 27, 78, 28, 1, 29, 28, 30, 28, 76, 32, 77, 33, 33, 29, 34, 33, 0, 20, 0, 48, 48, -1, 5, 1, 79, 24, 80, 49, 51, 50, 1, 51, 14, 0, 0, 0, 84, 84, -1, 7, 85, 28, 86, 33, 87, 81, 88, 7, 89, 29, 90, 82, 91, 83, 0, 0, 0, 92, 92, -1, 14, 93, 28, 94, 84, 95, 33, 96, 29, 97, 33, 98, 33, 99, 33, 100, 14, 101, 33, 102, 33, 103, 33, 104, 8, 105, 33, 106, 33, 0, 0, 0, 92, 107, -1, 14, 93, 28, 94, 85, 95, 33, 96, 29, 97, 33, 98, 33, 99, 33, 100, 14, 101, 33, 102, 33, 103, 33, 104, 8, 105, 33, 106, 33, 0, 0, 0, 108, 108, -1, 8, 109, 86, 110, 7, 111, 7, 112, 29, 113, 7, 114, 1, 115, 33, 116, 4, 0, 0, 0, 117, 117, -1, 4, 118, 28, 119, 87, 120, 1, 121, 1, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="82" shared="false">
+			<array  len="88" shared="false">
 				<vector2> 0, -33 </vector2>
 				<bool> False </bool>
 				<resource  external="0">  </resource>
@@ -234,15 +236,19 @@
 				<real> 1791 </real>
 				<resource  external="1">  </resource>
 				<int> 0 </int>
-				<real> 121 </real>
+				<real> 54 </real>
 				<real> 372 </real>
-				<real> 323 </real>
+				<real> 235 </real>
 				<real> 566 </real>
 				<resource  external="2">  </resource>
+				<real> -90 </real>
+				<real> 381 </real>
+				<real> 125 </real>
+				<resource  external="3">  </resource>
 				<vector2> 0, -11.2603 </vector2>
 				<vector2> 1, 1.02049 </vector2>
 				<resource  resource_type="Shape2D" path="local://4">  </resource>
-				<matrix32> 17.8131, -0, 0, 9.7, 305.821, 448.62 </matrix32>
+				<matrix32> 11.8059, -0, 0, 9.18625, 287.041, 450.182 </matrix32>
 				<int> 1 </int>
 				<real> 1 </real>
 				<real> 0.5 </real>
@@ -250,16 +256,16 @@
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
 				<real> -1 </real>
-				<vector2> 295.187, 460.889 </vector2>
-				<vector2> 0.527056, 0.453309 </vector2>
-				<resource  external="3">  </resource>
-				<vector2> 305.821, 448.62 </vector2>
-				<vector2> 17.8131, 9.7 </vector2>
-				<vector2> 272.325, 457.708 </vector2>
-				<vector2> 3.02215, 3.2306 </vector2>
+				<vector2> 280.488, 460.889 </vector2>
+				<vector2> 0.491919, 0.453309 </vector2>
+				<resource  external="4">  </resource>
+				<vector2> 287.041, 450.182 </vector2>
+				<vector2> 11.8059, 9.18625 </vector2>
+				<vector2> 284.939, 453.588 </vector2>
+				<vector2> 2.36516, 3.2306 </vector2>
 				<vector2> 0, 50 </vector2>
 				<int> 15 </int>
-				<vector2> 303.86, 448.054 </vector2>
+				<vector2> 287.042, 464.535 </vector2>
 				<vector2> 2.29946, 3.02585 </vector2>
 				<vector2> 1, 1 </vector2>
 				<int> -10000000 </int>
@@ -267,29 +273,31 @@
 				<real> 0.2 </real>
 				<vector2> 603.36, 531.117 </vector2>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 21.9856, -0, 0, 34.2775, -731.755, -336.428 </matrix32>
-				<real> -867 </real>
-				<real> -569 </real>
-				<real> -489 </real>
-				<real> 17 </real>
-				<resource  external="4">  </resource>
-				<vector2> -731.755, -336.428 </vector2>
-				<vector2> 21.9856, 34.2775 </vector2>
-				<vector2> 594.36, 525.117 </vector2>
-				<matrix32> 30.5781, -0, 0, 2.03182, -278.053, 53.4522 </matrix32>
-				<vector2> -278.053, 53.4522 </vector2>
-				<vector2> 30.5781, 2.03182 </vector2>
-				<vector2> 1142.91, 732 </vector2>
-				<matrix32> 67.8167, -0, 0, 2.59221, 1119.63, -150.081 </matrix32>
-				<vector2> 1119.63, -150.081 </vector2>
-				<vector2> 67.8167, 2.59221 </vector2>
-				<matrix32> 21.9856, -0, 0, 34.2775, 1437.89, -291.381 </matrix32>
-				<real> 983 </real>
-				<real> -496 </real>
-				<real> 1658 </real>
-				<real> 1110 </real>
+				<matrix32> 1.88733, -0, 0, 43.9867, -854.265, -271.898 </matrix32>
+				<real> -1044 </real>
+				<real> -564 </real>
+				<real> -666 </real>
+				<real> 22 </real>
 				<resource  external="5">  </resource>
-				<vector2> 1437.89, -291.381 </vector2>
+				<vector2> -854.265, -271.898 </vector2>
+				<vector2> 1.88733, 43.9867 </vector2>
+				<vector2> 594.36, 525.117 </vector2>
+				<matrix32> 4.94512, -0, 0, 3.20948, 1420.48, 47.8811 </matrix32>
+				<vector2> 1420.48, 47.8811 </vector2>
+				<vector2> 4.94512, 3.20948 </vector2>
+				<vector2> 1142.91, 732 </vector2>
+				<matrix32> 7.68633, -0, 0, 2.59221, -1301.41, -158.491 </matrix32>
+				<vector2> -1301.41, -158.491 </vector2>
+				<vector2> 7.68633, 2.59221 </vector2>
+				<vector2> 1553.63, 568.96 </vector2>
+				<matrix32> 3.36282, -0, 0, 39.0299, 703.33, -273.7 </matrix32>
+				<real> 146 </real>
+				<real> -538 </real>
+				<real> 821 </real>
+				<real> 1068 </real>
+				<resource  external="6">  </resource>
+				<vector2> 703.33, -273.7 </vector2>
+				<vector2> 3.36282, 39.0299 </vector2>
 				<vector2> 422, 1102 </vector2>
 				<matrix32> 302.692, -0, 0, 4.10721, 673, -62.641 </matrix32>
 				<vector2> 673, -62.641 </vector2>
@@ -300,7 +308,7 @@
 				<string> "" </string>
 				<resource  resource_type="SampleLibrary" path="local://5">  </resource>
 				<resource  resource_type="SampleLibrary" path="local://3">  </resource>
-				<resource  external="9">  </resource>
+				<resource  external="10">  </resource>
 				<real> 3 </real>
 			</array>
 			<string> "version" </string>
