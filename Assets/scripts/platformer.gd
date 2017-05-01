@@ -12,12 +12,10 @@ var player_animation
 var random_jumpingsound
 var player_samples
 var paint_sign
-var computer_samples
 var ray
 export var move_speed = 200
 var ground
-var hearts
-var kissable = true
+var water
 var timer
 var player_sprite
 export var height_speed = -1000
@@ -61,6 +59,7 @@ func _ready():
 	ray.add_exception(player)
 
 	# This node is a StaticBody. We will check collisions with it to restart the level.
+	water = get_node("Water")
 	ground = get_node("Ground")
 
 	# Timer nodes are used to do things once a certain amount of time has passed. 
@@ -129,10 +128,18 @@ func _process(delta):
 			get_tree().set_pause(false)
 			get_node('Artist_Tutorial').hide()
 			tutorial1_is_done=true
-
-	# If the ground is part of the player's colliding bodies...
+	if(paint_sign in player.get_colliding_bodies() && tutorial1_is_done == true && Input.is_action_pressed('ctrl')):
+		get_node("Painted_Platform").show()
+		get_node("Painted_Platform/CollisionShape2D").set_trigger(false)
+	
+	# If the water is part of the player's colliding bodies...
+	if water in player.get_colliding_bodies():
+		player_samples.play('splash')
+	
+			# If the ground is part of the player's colliding bodies...
 	if ground in player.get_colliding_bodies():
 		# reload the current scene
+		player_samples.play('jump')
 		get_tree().reload_current_scene()
 	
 	# If the "esc" or "Q" buttons are pressed...
