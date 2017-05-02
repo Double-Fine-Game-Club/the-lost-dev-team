@@ -3,6 +3,11 @@ extends Node2D
 export var speed = 60
 export (int, "Up", "Down") var initial_direction
 export var keep_moving = true
+export(int) var height = 300 setget set_height
+
+func set_height(new_height):
+	printt("new height", new_height)
+	height = new_height
 
 var going_up
 var platform
@@ -28,14 +33,20 @@ func _process(delta):
 		pos.y += speed * delta
 	else:
 		pos.y -= speed * delta
-	
+
 	platform.set_pos(pos)
-	
+
+func _changed_notify(value, blarp=0):
+	printt("value changed")
+
 func _ready():
-	platform = get_node("StaticBody2D")
+	platform = get_node("Platform")
 	area = get_node("Area2D")
+	
+	
+	
 	going_up = !initial_direction
 
-	printt("initial direction", initial_direction, going_up)
+	height = 300
 
 	set_process(true)
