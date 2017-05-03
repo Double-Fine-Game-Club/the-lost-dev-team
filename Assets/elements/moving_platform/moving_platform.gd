@@ -1,14 +1,42 @@
+tool
+
 extends Node2D
 
 export var speed = 60
+# TODO: Support left/right movement
 export (int, "Up", "Down") var initial_direction
-export var keep_moving = true
+export var keep_moving = true setget set_keep_moving
+export var width = 150 setget set_width
+export var height = 300 setget set_height
 
 var going_up
 var platform
 var area
 
+func set_keep_moving(new_keep_moving):
+	if new_keep_moving:
+		set_process(true)
+	keep_moving = new_keep_moving
+
+func set_extents_size(new_size, width=true):
+	var shape = area.get_shape(0)
+	var extents = shape.get_extents()
+	if width:
+		extents.x = new_size
+	else:
+		extents.y = new_size
+	shape.set_extents(extents)	
+
+func set_width(new_width):
+	set_extents_size(new_width, true)
+	width = new_width
+
+func set_height(new_height):
+	set_extents_size(new_height, false)
+	height = new_height
+
 func set_direction(pos):
+	# TODO: Subtract half width/height from platform to keep within extents
 	var area_pos = area.get_pos()
 	var area_extents = area.get_shape(0).get_extents()
 	var top = area_pos.y - area_extents.y
@@ -24,18 +52,18 @@ func _process(delta):
 	var pos = platform.get_pos()
 	set_direction(pos)
 	
+	# TODO: Support left/right movement
+	
 	if not going_up:
 		pos.y += speed * delta
 	else:
 		pos.y -= speed * delta
-	
+
 	platform.set_pos(pos)
-	
+
 func _ready():
-	platform = get_node("StaticBody2D")
+	platform = get_node("Platform")
 	area = get_node("Area2D")
 	going_up = !initial_direction
-
-	printt("initial direction", initial_direction, going_up)
 
 	set_process(true)
