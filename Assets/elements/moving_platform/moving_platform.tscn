@@ -7,6 +7,7 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 170, 300 )
+extents = Vector2( 170, 290 )
 
 [node name="Moving platform" type="Node2D"]
 
@@ -14,12 +15,12 @@ script/script = ExtResource( 1 )
 speed = 60
 initial_direction = 0
 keep_moving = true
-width = 150
+width = 170
 height = 300
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 0, -270.285 )
+transform/pos = Vector2( 0, 0 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
