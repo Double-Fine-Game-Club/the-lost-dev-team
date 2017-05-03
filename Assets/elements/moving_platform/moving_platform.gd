@@ -19,6 +19,9 @@ func set_keep_moving(new_keep_moving):
 	keep_moving = new_keep_moving
 
 func set_extents_size(new_size, width=true):
+	# Shape might not have been set yet (issue #14)
+	if not area:
+		return
 	var shape = area.get_shape(0)
 	var extents = shape.get_extents()
 	if width:
@@ -49,6 +52,16 @@ func set_direction(pos):
 			set_process(false)
 	
 func _process(delta):
+	# TODO: Unset platform variable when child is removed
+	if not platform:
+		for child in get_children():
+			if child.is_type("PhysicsBody2D"):
+				platform = child
+				platform.set_pos(self.get_pos())
+
+	if not platform:
+		return
+
 	var pos = platform.get_pos()
 	set_direction(pos)
 	
@@ -60,10 +73,9 @@ func _process(delta):
 		pos.y -= speed * delta
 
 	platform.set_pos(pos)
-
+	
 func _ready():
-	platform = get_node("Platform")
 	area = get_node("Area2D")
 	going_up = !initial_direction
-
+	
 	set_process(true)
