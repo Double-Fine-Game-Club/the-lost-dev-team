@@ -188,7 +188,7 @@ func _process(delta):
 			get_node('Coder_Tutorial').hide()
 			tutorial2_is_done=true
 	
-	if(laptop_sign in player.get_colliding_bodies() && tutorial2_is_done == true  && tutorial3_begin != true && Input.is_action_pressed('switch')):
+	if(laptop_sign in player.get_colliding_bodies() && player == artist && tutorial2_is_done == true  && tutorial3_begin != true && Input.is_action_pressed('switch')):
 
 		player = coder
 
@@ -227,7 +227,7 @@ func _process(delta):
 			get_node('Musician_Tutorial').hide()
 			tutorial4_begin=true
 
-	if(horn_sign in player.get_colliding_bodies() && tutorial4_begin == true && can_blow_on_fan != true && Input.is_action_pressed('switch')):
+	if(horn_sign in player.get_colliding_bodies() && player == coder && tutorial4_begin == true && can_blow_on_fan != true && Input.is_action_pressed('switch')):
 
 		player = musician
 
