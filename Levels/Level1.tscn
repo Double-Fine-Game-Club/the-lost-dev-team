@@ -1,0 +1,1252 @@
+[gd_scene load_steps=29 format=1]
+
+[ext_resource path="res://Assets/scripts/platformer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/tower.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/elevator-closed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/elevator-fan.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/fan.png" type="Texture" id=6]
+[ext_resource path="res://Assets/elements/moving_platform/moving_platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/sprites/elevator-platform.png" type="Texture" id=8]
+[ext_resource path="res://Assets/sprites/paint_sign.png" type="Texture" id=9]
+[ext_resource path="res://Assets/sprites/laptop_sign.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/horn_sign.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/Musician/musician.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/Coder/coder.png" type="Texture" id=13]
+[ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/painted_platform.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" id=17]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" id=18]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" id=19]
+[ext_resource path="res://Assets/sounds/Samples/splash.wav" type="Sample" id=20]
+[ext_resource path="res://Assets/sprites/enter_key.png" type="Texture" id=21]
+[ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20.3411, 7.66989 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.1593, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.72578, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 350.818, 10 )
+
+[sub_resource type="SampleLibrary" id=5]
+
+samples/jump = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 17 )
+}
+samples/jump2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 18 )
+}
+samples/jump3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 19 )
+}
+samples/splash = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 20 )
+}
+
+[node name="Node2D" type="KinematicBody2D"]
+
+process/pause_mode = 2
+transform/pos = Vector2( 0, -33 )
+z/relative = false
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
+move_speed = 500
+height_speed = -1000
+next_level = "res://Levels/Level2.xml"
+
+[node name="Background" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -921.0
+margin/top = -714.0
+margin/right = 3079.0
+margin/bottom = 1786.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="Tower" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 1553.63, 568.96 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.53357, 0, 0, 33.0594, 507.526, -223.14 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 1 )
+shapes/1/transform = Matrix32( 2.53357, 0, 0, 33.0594, 568.243, 281.565 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Tower"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 322.0
+margin/top = -545.0
+margin/right = 1112.0
+margin/bottom = 1069.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+
+[node name="closed_elevator" type="TextureFrame" parent="Tower"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 432.0
+margin/top = -490.0
+margin/right = 1111.0
+margin/bottom = 48.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 0
+
+[node name="lower_elevator" type="TextureFrame" parent="Tower"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 323.0
+margin/top = -29.0
+margin/right = 998.0
+margin/bottom = 489.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 0
+
+[node name="fan" type="TextureFrame" parent="Tower"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 646.0
+margin/top = 311.0
+margin/right = 730.0
+margin/bottom = 413.0
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+
+transform/pos = Vector2( 507.526, -223.14 )
+transform/scale = Vector2( 2.53357, 33.0594 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+
+transform/pos = Vector2( 568.243, 281.565 )
+transform/scale = Vector2( 2.53357, 33.0594 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 1
+
+[node name="Exit Door" type="StaticBody2D" parent="Tower"]
+
+transform/pos = Vector2( -1553.63, -568.96 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.53357, 0, 0, 17.3835, 2531.98, 1345.87 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Exit Door"]
+
+transform/pos = Vector2( 2531.98, 1345.87 )
+transform/scale = Vector2( 2.53357, 17.3835 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Moving platform" parent="." instance=ExtResource( 7 )]
+
+visibility/visible = false
+transform/pos = Vector2( 2506.83, 751.016 )
+transform/scale = Vector2( 0.871186, 0.740963 )
+speed = 400
+
+[node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
+
+transform/pos = Vector2( 2506.83, 288.91 )
+transform/scale = Vector2( 43.8363, 2.47025 )
+input/pickable = false
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 0.264069, 0, 0, 1.35566, -57.805, 38.9725 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Moving platform/Moving_platform"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -61.0
+margin/top = 16.0
+margin/right = -54.0
+margin/bottom = 66.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving platform/Moving_platform"]
+
+transform/pos = Vector2( -57.805, 38.9725 )
+transform/scale = Vector2( 0.264069, 1.35566 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Moving platform2" parent="." instance=ExtResource( 7 )]
+
+visibility/visible = false
+transform/pos = Vector2( 2046.95, 1393.37 )
+transform/scale = Vector2( 0.925309, 0.828133 )
+speed = 300
+
+[node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
+
+transform/pos = Vector2( 2046.95, 136.128 )
+transform/scale = Vector2( 43.8363, 2.47025 )
+input/pickable = false
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 0.264069, 0, 0, 1.35566, -47.514, -55.6328 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Moving platform2/Moving_platform"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -51.0
+margin/top = -79.0
+margin/right = -44.0
+margin/bottom = -29.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving platform2/Moving_platform"]
+
+transform/pos = Vector2( -47.514, -55.6328 )
+transform/scale = Vector2( 0.264069, 1.35566 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Paint_Sign" type="StaticBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 565.348, 497.828 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Paint_Sign"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 535.0
+margin/top = 445.0
+margin/right = 595.0
+margin/bottom = 549.0
+texture = ExtResource( 9 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paint_Sign"]
+
+transform/pos = Vector2( 565.348, 497.828 )
+transform/scale = Vector2( 2.89445, 5.41231 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Laptop_Sign" type="StaticBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 1805.06, 500.718 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Laptop_Sign"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1781.0
+margin/top = 444.0
+margin/right = 1841.0
+margin/bottom = 548.0
+texture = ExtResource( 10 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laptop_Sign"]
+
+transform/pos = Vector2( 1805.06, 500.718 )
+transform/scale = Vector2( 2.89445, 5.41231 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Horn_Sign" type="StaticBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 6.76951, 0, 0, 5.41231, 2279.01, 940.759 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Horn_Sign"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2299.0
+margin/top = 892.0
+margin/right = 2359.0
+margin/bottom = 996.0
+texture = ExtResource( 11 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horn_Sign"]
+
+transform/pos = Vector2( 2279.01, 940.759 )
+transform/scale = Vector2( 6.76951, 5.41231 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Musician" type="RigidBody2D" parent="."]
+
+process/pause_mode = 1
+transform/pos = Vector2( 8.11884, -15.0422 )
+transform/scale = Vector2( 0.915308, 1.025 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 12.2449
+friction = 1.0
+bounce = 0.0
+gravity_scale = 20.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Musician"]
+
+transform/pos = Vector2( 15.7451, 462.526 )
+transform/scale = Vector2( 0.463943, 0.453309 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Musician"]
+
+transform/pos = Vector2( 26.7035, 456.641 )
+transform/scale = Vector2( 11.8059, 9.3054 )
+shape = SubResource( 4 )
+trigger = true
+_update_shape_index = 0
+
+[node name="RayCast2D" type="RayCast2D" parent="Musician"]
+
+transform/pos = Vector2( 16.4193, 437.601 )
+transform/scale = Vector2( 2.36516, 2.62874 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="Musician"]
+
+transform/pos = Vector2( 27.3741, 444.818 )
+transform/scale = Vector2( 2.13992, 2.41318 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 0.5
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Coder" type="RigidBody2D" parent="."]
+
+process/pause_mode = 1
+transform/pos = Vector2( 137.831, -11.2603 )
+transform/scale = Vector2( 0.958895, 1.02049 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 12.2449
+friction = 1.0
+bounce = 0.0
+gravity_scale = 20.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Coder"]
+
+transform/pos = Vector2( 15.7451, 462.526 )
+transform/scale = Vector2( 0.463943, 0.453309 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coder"]
+
+transform/pos = Vector2( 26.7035, 456.641 )
+transform/scale = Vector2( 11.8059, 9.3054 )
+shape = SubResource( 4 )
+trigger = true
+_update_shape_index = 0
+
+[node name="RayCast2D" type="RayCast2D" parent="Coder"]
+
+transform/pos = Vector2( 16.4193, 437.601 )
+transform/scale = Vector2( 2.36516, 2.62874 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="Coder"]
+
+transform/pos = Vector2( 27.3741, 444.818 )
+transform/scale = Vector2( 2.13992, 2.41318 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 0.5
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Artist" type="RigidBody2D" parent="."]
+
+process/pause_mode = 1
+transform/pos = Vector2( 1, -11.2603 )
+transform/scale = Vector2( 1, 1.02049 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 287.041, 451.731 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 12.2449
+friction = 1.0
+bounce = 0.0
+gravity_scale = 20.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Artist"]
+
+transform/pos = Vector2( 279.423, 460.889 )
+transform/scale = Vector2( 0.463943, 0.453309 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Artist"]
+
+transform/pos = Vector2( 287.041, 451.731 )
+transform/scale = Vector2( 11.8059, 9.3054 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="RayCast2D" type="RayCast2D" parent="Artist"]
+
+transform/pos = Vector2( 284.939, 434.328 )
+transform/scale = Vector2( 2.36516, 2.62874 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="Artist"]
+
+transform/pos = Vector2( 287.042, 444.874 )
+transform/scale = Vector2( 2.29946, 2.41144 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 0.5
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Painted_Platform" type="StaticBody2D" parent="Platforms"]
+
+visibility/visible = false
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 15.6016, 0, 0, 5.41231, 1069.45, 606.536 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Platforms/Painted_Platform"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 894.0
+margin/top = 546.0
+margin/right = 1242.0
+margin/bottom = 652.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Painted_Platform"]
+
+transform/pos = Vector2( 1069.45, 606.536 )
+transform/scale = Vector2( 15.6016, 5.41231 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Platform1" type="StaticBody2D" parent="Platforms"]
+
+transform/pos = Vector2( 594.36, 525.117 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 21.142, 0, 0, 3.20948, 1338.61, 53.8578 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 1338.61, 53.8578 )
+transform/scale = Vector2( 21.142, 3.20948 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+
+transform/pos = Vector2( 1142.91, 732 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 22.1272, 0, 0, 2.59221, -918.637, -158.491 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+
+transform/pos = Vector2( -918.637, -158.491 )
+transform/scale = Vector2( 22.1272, 2.59221 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="elevator_floor" type="StaticBody2D" parent="Platforms"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 0.64756, 0, 0, 1.62543, 2408.3, 1028.69 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/elevator_floor"]
+
+transform/pos = Vector2( 2408.3, 1028.69 )
+transform/scale = Vector2( 0.64756, 1.62543 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="exit_floor" type="StaticBody2D" parent="Platforms"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1.09671, 0, 0, 1.62543, 2273.99, 1510.57 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/exit_floor"]
+
+transform/pos = Vector2( 2273.99, 1510.57 )
+transform/scale = Vector2( 1.09671, 1.62543 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 422, 1102 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 25.104, 0, 0, 4.10721, 690.751, -423.709 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+
+transform/pos = Vector2( 690.751, -423.709 )
+transform/scale = Vector2( 25.104, 4.10721 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 378.89, 2826.4 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 114.673, 0, 0, 4.10721, 795.677, -411.677 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+
+transform/pos = Vector2( 795.677, -411.677 )
+transform/scale = Vector2( 114.673, 4.10721 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Prototype1" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 603.36, 531.117 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.08007, 0, 0, 43.9867, -713.25, -278.748 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Prototype1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -1044.0
+margin/top = -564.0
+margin/right = -666.0
+margin/bottom = 22.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prototype1"]
+
+transform/pos = Vector2( -713.25, -278.748 )
+transform/scale = Vector2( 2.08007, 43.9867 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 603.36, 531.117 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.46883, 0, 0, 62.6726, 2026.78, 509.692 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+
+transform/pos = Vector2( 2026.78, 509.692 )
+transform/scale = Vector2( 1.46883, 62.6726 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 603.36, 531.117 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.46883, 0, 0, 29.269, 2027.95, -207.128 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+
+transform/pos = Vector2( 2027.95, -207.128 )
+transform/scale = Vector2( 1.46883, 29.269 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 603.36, 531.117 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.46883, 0, 0, 62.6726, 1296.79, 517.894 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+
+transform/pos = Vector2( 1296.79, 517.894 )
+transform/scale = Vector2( 1.46883, 62.6726 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 5 )
+default/volume_db = -20.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 0.0
+default/filter/resonance = 0.0
+default/filter/gain = 0.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="Artist_Tutorial" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 99.0
+margin/top = 121.0
+margin/right = 667.0
+margin/bottom = 370.0
+
+[node name="Label" type="Label" parent="Artist_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 22.0
+margin/top = 42.0
+margin/right = 282.0
+margin/bottom = 59.0
+text = "The artist can use paint to make a block."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Artist_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 46.0
+margin/top = 103.0
+margin/right = 306.0
+margin/bottom = 120.0
+text = "Press Control to use the paintbrush."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Artist_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 21 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Coder_Tutorial" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1260.0
+margin/top = 146.0
+margin/right = 1828.0
+margin/bottom = 395.0
+
+[node name="Label" type="Label" parent="Coder_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 70.0
+margin/top = 53.0
+margin/right = 330.0
+margin/bottom = 70.0
+text = "The coder can hack locked doors."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Coder_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 69.0
+margin/top = 101.0
+margin/right = 329.0
+margin/bottom = 118.0
+text = "Press Shift to switch to the coder."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Coder_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 21 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Coder_Tutorial2" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1260.0
+margin/top = 146.0
+margin/right = 1828.0
+margin/bottom = 395.0
+
+[node name="Label" type="Label" parent="Coder_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 5.0
+margin/top = 51.0
+margin/right = 296.0
+margin/bottom = 68.0
+text = "Now you're the coder, so open the elevator."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Coder_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 69.0
+margin/top = 101.0
+margin/right = 329.0
+margin/bottom = 118.0
+text = "Press Control to use the laptop."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Coder_Tutorial2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 21 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Musician_Tutorial" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2064.0
+margin/top = 563.0
+margin/right = 2632.0
+margin/bottom = 812.0
+
+[node name="Label" type="Label" parent="Musician_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 30.0
+margin/top = 51.0
+margin/right = 321.0
+margin/bottom = 68.0
+text = "The musician can blow his horn in fans."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Musician_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 46.0
+margin/top = 101.0
+margin/right = 306.0
+margin/bottom = 118.0
+text = "Press Shift to switch to the musician."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Musician_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 21 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Musician_Tutorial2" type="Panel" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2013.0
+margin/top = 640.0
+margin/right = 2581.0
+margin/bottom = 889.0
+
+[node name="Label" type="Label" parent="Musician_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 16.0
+margin/top = 50.0
+margin/right = 307.0
+margin/bottom = 67.0
+text = "Now you're the musician. Blow on the fan."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Musician_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 87.0
+margin/top = 99.0
+margin/right = 347.0
+margin/bottom = 116.0
+text = "Press Control to blow the horn."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Musician_Tutorial2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 21 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 22 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -20.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+
