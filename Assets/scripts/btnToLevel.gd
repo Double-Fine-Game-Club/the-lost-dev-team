@@ -2,15 +2,15 @@ var current_scene
 
 func play_pressed():
 	current_scene.queue_free()
-	get_tree().change_scene('res://Levels/Level1.xml')
+	get_tree().change_scene('res://Levels/Level1.tscn')
 
 func play_credits():
 	current_scene.queue_free()
-	get_tree().change_scene('res://Levels/Credits.xml')
+	get_tree().change_scene('res://Levels/Credits.tscn')
 
 func play_options():
 	current_scene.queue_free()
-	get_tree().change_scene('res://Levels/Options.xml')
+	get_tree().change_scene('res://Levels/Options.tscn')
 
 func quit_pressed():
 	current_scene.queue_free()

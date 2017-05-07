@@ -224,7 +224,7 @@ speed = 400
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
 
-transform/pos = Vector2( 2506.83, 288.91 )
+transform/pos = Vector2( 2506.83, 186.14 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 8 )
@@ -268,7 +268,7 @@ speed = 300
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
 
-transform/pos = Vector2( 2046.95, 136.128 )
+transform/pos = Vector2( 2046.95, 969.713 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 8 )

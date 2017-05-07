@@ -261,7 +261,7 @@ func _process(delta):
 
 	if(exit_door in player.get_colliding_bodies()):
 		current_scene.queue_free()
-		get_tree().quit();
+		get_tree().change_scene('res://Levels/Level_end.tscn')
 
 	#If the water is part of the player's colliding bodies...
 	if water in player.get_colliding_bodies():
