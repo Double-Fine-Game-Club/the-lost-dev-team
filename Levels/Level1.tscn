@@ -28,12 +28,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 20.3411, 7.66989 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.1593, 10 )
@@ -43,12 +43,12 @@ extents = Vector2( 11.1593, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 5.72578, 10 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 350.818, 10 )
 
-[sub_resource type="SampleLibrary" id=5]
+[sub_resource type="SampleLibrary" id=6]
 
 samples/jump = {
 "db": 0.0,
@@ -110,7 +110,7 @@ stretch_mode = 0
 transform/pos = Vector2( 1553.63, 568.96 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.53357, 0, 0, 33.0594, 507.526, -223.14 )
+shapes/0/transform = Matrix32( 2.53357, 0, 0, 33.0594, 506.623, -223.14 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
 shapes/1/transform = Matrix32( 2.53357, 0, 0, 33.0594, 568.243, 281.565 )
@@ -179,7 +179,7 @@ stretch_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
 
-transform/pos = Vector2( 507.526, -223.14 )
+transform/pos = Vector2( 506.623, -223.14 )
 transform/scale = Vector2( 2.53357, 33.0594 )
 shape = SubResource( 1 )
 trigger = false
@@ -193,21 +193,18 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
-[node name="Exit Door" type="StaticBody2D" parent="Tower"]
+[node name="Exit Door" type="Area2D" parent="."]
 
-transform/pos = Vector2( -1553.63, -568.96 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 2.53357, 0, 0, 17.3835, 2531.98, 1345.87 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Exit Door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit Door"]
 
 transform/pos = Vector2( 2531.98, 1345.87 )
 transform/scale = Vector2( 2.53357, 17.3835 )
@@ -224,10 +221,10 @@ speed = 400
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
 
-transform/pos = Vector2( 2506.83, 186.14 )
+transform/pos = Vector2( 2506.83, -248.114 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 0.264069, 0, 0, 1.35566, -57.805, 38.9725 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -255,7 +252,7 @@ stretch_mode = 0
 
 transform/pos = Vector2( -57.805, 38.9725 )
 transform/scale = Vector2( 0.264069, 1.35566 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -268,10 +265,10 @@ speed = 300
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
 
-transform/pos = Vector2( 2046.95, 969.713 )
+transform/pos = Vector2( 2046.95, 285.929 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 0.264069, 0, 0, 1.35566, -47.514, -55.6328 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -299,22 +296,20 @@ stretch_mode = 0
 
 transform/pos = Vector2( -47.514, -55.6328 )
 transform/scale = Vector2( 0.264069, 1.35566 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Paint_Sign" type="StaticBody2D" parent="."]
+[node name="Paint_Sign" type="Area2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 565.348, 497.828 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="TextureFrame" type="TextureFrame" parent="Paint_Sign"]
 
@@ -333,22 +328,20 @@ stretch_mode = 0
 
 transform/pos = Vector2( 565.348, 497.828 )
 transform/scale = Vector2( 2.89445, 5.41231 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Laptop_Sign" type="StaticBody2D" parent="."]
+[node name="Laptop_Sign" type="Area2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
-shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 1805.06, 500.718 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 1811.74, 500.718 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="TextureFrame" type="TextureFrame" parent="Laptop_Sign"]
 
@@ -365,24 +358,22 @@ stretch_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Laptop_Sign"]
 
-transform/pos = Vector2( 1805.06, 500.718 )
+transform/pos = Vector2( 1811.74, 500.718 )
 transform/scale = Vector2( 2.89445, 5.41231 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Horn_Sign" type="StaticBody2D" parent="."]
+[node name="Horn_Sign" type="Area2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
-shapes/0/transform = Matrix32( 6.76951, 0, 0, 5.41231, 2279.01, 940.759 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 6.36969, 0, 0, 5.41231, 2276.53, 940.759 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="TextureFrame" type="TextureFrame" parent="Horn_Sign"]
 
@@ -399,9 +390,9 @@ stretch_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horn_Sign"]
 
-transform/pos = Vector2( 2279.01, 940.759 )
-transform/scale = Vector2( 6.76951, 5.41231 )
-shape = SubResource( 6 )
+transform/pos = Vector2( 2276.53, 940.759 )
+transform/scale = Vector2( 6.36969, 5.41231 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
@@ -413,7 +404,7 @@ transform/scale = Vector2( 0.915308, 1.025 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
-shapes/0/trigger = true
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 3
@@ -443,7 +434,7 @@ texture = ExtResource( 12 )
 transform/pos = Vector2( 26.7035, 456.641 )
 transform/scale = Vector2( 11.8059, 9.3054 )
 shape = SubResource( 4 )
-trigger = true
+trigger = false
 _update_shape_index = 0
 
 [node name="RayCast2D" type="RayCast2D" parent="Musician"]
@@ -484,7 +475,7 @@ transform/scale = Vector2( 0.958895, 1.02049 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
-shapes/0/trigger = true
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 3
@@ -514,7 +505,7 @@ texture = ExtResource( 13 )
 transform/pos = Vector2( 26.7035, 456.641 )
 transform/scale = Vector2( 11.8059, 9.3054 )
 shape = SubResource( 4 )
-trigger = true
+trigger = false
 _update_shape_index = 0
 
 [node name="RayCast2D" type="RayCast2D" parent="Coder"]
@@ -554,7 +545,7 @@ transform/pos = Vector2( 1, -11.2603 )
 transform/scale = Vector2( 1, 1.02049 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 287.041, 451.731 )
+shapes/0/transform = Matrix32( 11.7123, 0, 0, 9.09133, 286.224, 454.514 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -582,8 +573,8 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Artist"]
 
-transform/pos = Vector2( 287.041, 451.731 )
-transform/scale = Vector2( 11.8059, 9.3054 )
+transform/pos = Vector2( 286.224, 454.514 )
+transform/scale = Vector2( 11.7123, 9.09133 )
 shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
@@ -624,7 +615,7 @@ drag_margin/bottom = 0.2
 
 visibility/visible = false
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 15.6016, 0, 0, 5.41231, 1069.45, 606.536 )
 shapes/0/trigger = true
 collision/layers = 1
@@ -652,7 +643,7 @@ stretch_mode = 0
 
 transform/pos = Vector2( 1069.45, 606.536 )
 transform/scale = Vector2( 15.6016, 5.41231 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
@@ -704,7 +695,7 @@ _update_shape_index = 0
 [node name="elevator_floor" type="StaticBody2D" parent="Platforms"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 0.64756, 0, 0, 1.62543, 2408.3, 1028.69 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -718,14 +709,14 @@ bounce = 0.0
 
 transform/pos = Vector2( 2408.3, 1028.69 )
 transform/scale = Vector2( 0.64756, 1.62543 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
 [node name="exit_floor" type="StaticBody2D" parent="Platforms"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1.09671, 0, 0, 1.62543, 2273.99, 1510.57 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -739,23 +730,21 @@ bounce = 0.0
 
 transform/pos = Vector2( 2273.99, 1510.57 )
 transform/scale = Vector2( 1.09671, 1.62543 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Water" type="StaticBody2D" parent="."]
+[node name="Water" type="Area2D" parent="."]
 
 transform/pos = Vector2( 422, 1102 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 25.104, 0, 0, 4.10721, 690.751, -423.709 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
 
@@ -765,19 +754,17 @@ shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Ground" type="Area2D" parent="."]
 
 transform/pos = Vector2( 378.89, 2826.4 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 114.673, 0, 0, 4.10721, 795.677, -411.677 )
 shapes/0/trigger = true
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 
@@ -902,7 +889,7 @@ autoplay = ""
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = SubResource( 5 )
+config/samples = SubResource( 6 )
 default/volume_db = -20.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -1248,5 +1235,17 @@ process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = false
+
+[connection signal="body_enter" from="Exit Door" to="." method="_on_Exit_Door_body_enter"]
+
+[connection signal="body_enter" from="Paint_Sign" to="." method="_on_Paint_Sign_body_enter"]
+
+[connection signal="body_enter" from="Laptop_Sign" to="." method="_on_Laptop_Sign_body_enter"]
+
+[connection signal="body_enter" from="Horn_Sign" to="." method="_on_Horn_Sign_body_enter"]
+
+[connection signal="body_enter" from="Water" to="." method="_on_Water_body_enter"]
+
+[connection signal="body_enter" from="Ground" to="." method="_on_Ground_body_enter"]
 
 
