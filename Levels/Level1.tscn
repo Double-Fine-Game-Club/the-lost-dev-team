@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=33 format=1]
 
 [ext_resource path="res://Assets/scripts/platformer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" id=2]
@@ -16,12 +16,16 @@
 [ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" id=14]
 [ext_resource path="res://Assets/sprites/painted_platform.png" type="Texture" id=15]
 [ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" id=16]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump.wav" type="Sample" id=17]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump2.wav" type="Sample" id=18]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump3.wav" type="Sample" id=19]
-[ext_resource path="res://Assets/sounds/Samples/splash.wav" type="Sample" id=20]
-[ext_resource path="res://Assets/sprites/enter_key.png" type="Texture" id=21]
-[ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Assets/sounds/Samples/coder/code-kyle3wynn.wav" type="Sample" id=17]
+[ext_resource path="res://Assets/sounds/Samples/grunt-kyle3wynn.wav" type="Sample" id=18]
+[ext_resource path="res://Assets/sounds/Samples/musician/horn-kyle3wynn.wav" type="Sample" id=19]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump-jenni.wav" type="Sample" id=20]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump2-jenni.wav" type="Sample" id=21]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump3-jenni.wav" type="Sample" id=22]
+[ext_resource path="res://Assets/sounds/Samples/artist/paint-kyle3wynn.wav" type="Sample" id=23]
+[ext_resource path="res://Assets/sounds/Samples/splash-jenni.wav" type="Sample" id=24]
+[ext_resource path="res://Assets/sprites/enter_key.png" type="Texture" id=25]
+[ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -50,29 +54,53 @@ extents = Vector2( 350.818, 10 )
 
 [sub_resource type="SampleLibrary" id=6]
 
-samples/jump = {
+samples/code-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 17 )
 }
-samples/jump2 = {
+samples/grunt-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 18 )
 }
-samples/jump3 = {
+samples/horn-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 19 )
 }
-samples/splash = {
+samples/jump-jenni = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 20 )
+}
+samples/jump2-jenni = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 21 )
+}
+samples/jump3-jenni = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 22 )
+}
+samples/paint-kyle3wynn = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 23 )
+}
+samples/splash-jenni = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 24 )
 }
 
 [node name="Node2D" type="KinematicBody2D"]
@@ -221,7 +249,7 @@ speed = 400
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
 
-transform/pos = Vector2( 2506.83, -248.114 )
+transform/pos = Vector2( 2506.83, 37.5479 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -265,7 +293,7 @@ speed = 300
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
 
-transform/pos = Vector2( 2046.95, 285.929 )
+transform/pos = Vector2( 2046.95, 292.148 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -962,7 +990,7 @@ margin/bottom = 229.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 21 )
+textures/normal = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
@@ -1025,7 +1053,7 @@ margin/bottom = 229.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 21 )
+textures/normal = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
@@ -1088,7 +1116,7 @@ margin/bottom = 229.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 21 )
+textures/normal = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
@@ -1151,7 +1179,7 @@ margin/bottom = 229.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 21 )
+textures/normal = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
@@ -1214,13 +1242,13 @@ margin/bottom = 229.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 21 )
+textures/normal = ExtResource( 25 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 22 )
+stream/stream = ExtResource( 26 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -20.0

@@ -165,15 +165,17 @@ func _process(delta):
 				# Set the axis_velocity on the y axis to -1000,
 				player.set_axis_velocity(Vector2(0,height_speed))
 				# And play the "jump" sample sound
-				
-				random_jumpingsound = get_random_number()
-				if random_jumpingsound == 1:
-					player_samples.play('jump')
-				if random_jumpingsound == 2:
-					player_samples.play('jump2')
-				if random_jumpingsound == 3:
-					player_samples.play('jump3')
-	
+				if(player == artist):
+					random_jumpingsound = get_random_number()
+					if random_jumpingsound == 1:
+						player_samples.play('jump-jenni')
+					if random_jumpingsound == 2:
+						player_samples.play('jump2-jenni')
+					if random_jumpingsound == 3:
+						player_samples.play('jump3-jenni')
+				else:
+					player_samples.play('grunt-kyle3wynn')
+
 	# Also, if the RayCast2D is colliding with something (if it is on_ground()...
 	if on_ground():
 		# And if the "left" action is pressed...
@@ -196,6 +198,7 @@ func _process(delta):
 		get_node('Artist_Tutorial').hide()
 		tutorial1_is_done=true
 	if(paintbody == "Artist" && Input.is_action_pressed('ctrl')):
+		player_samples.play('paint-kyle3wynn')
 		get_node("Platforms/Painted_Platform").show()
 		get_node("Platforms/Painted_Platform/CollisionShape2D").set_trigger(false)
 		#Coder Tutorial Section
@@ -227,6 +230,7 @@ func _process(delta):
 			get_node('Coder_Tutorial2').hide()
 			tutorial3_begin = true
 	if(laptopbody == "Coder" && Input.is_action_pressed('ctrl')):
+		player_samples.play('code-kyle3wynn')
 		get_node("Tower/closed_elevator").hide()
 		get_node("Moving platform").show()
 		get_node("Tower/CollisionShape2D").set_trigger(true)
@@ -257,6 +261,7 @@ func _process(delta):
 			get_node('Musician_Tutorial2').hide()
 			tutorial4_begin = true
 	if(hornbody == "Musician" && Input.is_action_pressed('ctrl')):
+		player_samples.play('horn-kyle3wynn')
 		get_node("Tower/lower_elevator").hide()
 		get_node("Moving platform2").show()
 		get_node("Tower/CollisionShape2D2").set_trigger(true)
@@ -266,7 +271,7 @@ func _process(delta):
 
 	#If the water is part of the player's colliding bodies...
 	if(water == "Musician" || water == "Coder" || water == "Artist"):
-		player_samples.play('splash')
+		player_samples.play('splash-jenni')
 	
 	# If the ground is part of the player's colliding bodies...
 	if(ground == "Musician" || ground == "Coder" || ground == "Artist"):
