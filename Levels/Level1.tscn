@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=1]
+[gd_scene load_steps=38 format=1]
 
 [ext_resource path="res://Assets/scripts/platformer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/backgrounds/elevator_madness.png" type="Texture" id=2]
@@ -8,24 +8,25 @@
 [ext_resource path="res://Assets/sprites/fan.png" type="Texture" id=6]
 [ext_resource path="res://Assets/elements/moving_platform/moving_platform.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/sprites/elevator-platform.png" type="Texture" id=8]
-[ext_resource path="res://Assets/sprites/paint_sign.png" type="Texture" id=9]
-[ext_resource path="res://Assets/sprites/laptop_sign.png" type="Texture" id=10]
-[ext_resource path="res://Assets/sprites/horn_sign.png" type="Texture" id=11]
-[ext_resource path="res://Assets/sprites/Musician/musician.png" type="Texture" id=12]
-[ext_resource path="res://Assets/sprites/Coder/coder.png" type="Texture" id=13]
+[ext_resource path="res://Assets/scripts/tutorial.gd" type="Script" id=9]
+[ext_resource path="res://Assets/sprites/paint_sign.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/enter_key.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/laptop_sign.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/horn_sign.png" type="Texture" id=13]
 [ext_resource path="res://Assets/sprites/Artist/artist.png" type="Texture" id=14]
-[ext_resource path="res://Assets/sprites/painted_platform.png" type="Texture" id=15]
-[ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" id=16]
-[ext_resource path="res://Assets/sounds/Samples/coder/code-kyle3wynn.wav" type="Sample" id=17]
-[ext_resource path="res://Assets/sounds/Samples/grunt-kyle3wynn.wav" type="Sample" id=18]
-[ext_resource path="res://Assets/sounds/Samples/musician/horn-kyle3wynn.wav" type="Sample" id=19]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump-jenni.wav" type="Sample" id=20]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump2-jenni.wav" type="Sample" id=21]
-[ext_resource path="res://Assets/sounds/Samples/artist/jump3-jenni.wav" type="Sample" id=22]
-[ext_resource path="res://Assets/sounds/Samples/artist/paint-kyle3wynn.wav" type="Sample" id=23]
-[ext_resource path="res://Assets/sounds/Samples/splash-jenni.wav" type="Sample" id=24]
-[ext_resource path="res://Assets/sprites/enter_key.png" type="Texture" id=25]
-[ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Assets/sprites/Coder/coder.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/Musician/musician.png" type="Texture" id=16]
+[ext_resource path="res://Assets/sprites/painted_platform.png" type="Texture" id=17]
+[ext_resource path="res://Assets/sprites/prototype1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/sounds/Samples/coder/code-kyle3wynn.wav" type="Sample" id=19]
+[ext_resource path="res://Assets/sounds/Samples/grunt-kyle3wynn.wav" type="Sample" id=20]
+[ext_resource path="res://Assets/sounds/Samples/musician/horn-kyle3wynn.wav" type="Sample" id=21]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump-jenni.wav" type="Sample" id=22]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump2-jenni.wav" type="Sample" id=23]
+[ext_resource path="res://Assets/sounds/Samples/artist/jump3-jenni.wav" type="Sample" id=24]
+[ext_resource path="res://Assets/sounds/Samples/artist/paint-kyle3wynn.wav" type="Sample" id=25]
+[ext_resource path="res://Assets/sounds/Samples/splash-jenni.wav" type="Sample" id=26]
+[ext_resource path="res://Assets/sounds/Streams/Music/elevator-madness-jenni.ogg" type="AudioStream" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -42,15 +43,35 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.1593, 10 )
 
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 277.648, 10 )
+
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5.72578, 10 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 350.818, 10 )
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 426.244, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 270.832, 10 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 520.63, 10 )
 
 [sub_resource type="SampleLibrary" id=6]
 
@@ -58,67 +79,59 @@ samples/code-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 17 )
+"sample": ExtResource( 19 )
 }
 samples/grunt-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 18 )
+"sample": ExtResource( 20 )
 }
 samples/horn-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 19 )
+"sample": ExtResource( 21 )
 }
 samples/jump-jenni = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 20 )
+"sample": ExtResource( 22 )
 }
 samples/jump2-jenni = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 21 )
+"sample": ExtResource( 23 )
 }
 samples/jump3-jenni = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 22 )
+"sample": ExtResource( 24 )
 }
 samples/paint-kyle3wynn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 23 )
+"sample": ExtResource( 25 )
 }
 samples/splash-jenni = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 24 )
+"sample": ExtResource( 26 )
 }
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Node2D" type="Node2D"]
 
-process/pause_mode = 2
-transform/pos = Vector2( 0, -33 )
-z/relative = false
-input/pickable = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
+process/pause_mode = 1
 script/script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 move_speed = 500
-height_speed = -1000
-next_level = "res://Levels/Level2.xml"
 
 [node name="Background" type="TextureFrame" parent="."]
 
@@ -126,10 +139,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -921.0
-margin/top = -714.0
-margin/right = 3079.0
-margin/bottom = 1786.0
+margin/left = -922.0
+margin/top = -713.0
+margin/right = 3078.0
+margin/bottom = 1787.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
@@ -143,6 +156,9 @@ shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
 shapes/1/transform = Matrix32( 2.53357, 0, 0, 33.0594, 568.243, 281.565 )
 shapes/1/trigger = false
+shapes/2/shape = SubResource( 1 )
+shapes/2/transform = Matrix32( 16.3946, 0, 0, 9.83187, 768.576, -462.765 )
+shapes/2/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -221,6 +237,14 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tower"]
+
+transform/pos = Vector2( 768.576, -462.765 )
+transform/scale = Vector2( 16.3946, 9.83187 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 2
+
 [node name="Exit Door" type="Area2D" parent="."]
 
 input/pickable = false
@@ -249,7 +273,6 @@ speed = 400
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
 
-transform/pos = Vector2( 2506.83, 37.5479 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -293,7 +316,6 @@ speed = 300
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
 
-transform/pos = Vector2( 2046.95, 292.148 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -328,7 +350,17 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Paint_Sign" type="Area2D" parent="."]
+[node name="Tutorial_signs" type="Area2D" parent="."]
+
+process/pause_mode = 2
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 9 )
+
+[node name="Paint_Sign" type="Area2D" parent="Tutorial_signs"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -339,7 +371,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="TextureFrame" type="TextureFrame" parent="Paint_Sign"]
+[node name="TextureFrame" type="TextureFrame" parent="Tutorial_signs/Paint_Sign"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -349,10 +381,10 @@ margin/left = 535.0
 margin/top = 445.0
 margin/right = 595.0
 margin/bottom = 549.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paint_Sign"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial_signs/Paint_Sign"]
 
 transform/pos = Vector2( 565.348, 497.828 )
 transform/scale = Vector2( 2.89445, 5.41231 )
@@ -360,7 +392,70 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Laptop_Sign" type="Area2D" parent="."]
+[node name="Artist_Tutorial" type="Panel" parent="Tutorial_signs"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 99.0
+margin/top = 121.0
+margin/right = 667.0
+margin/bottom = 370.0
+
+[node name="Label" type="Label" parent="Tutorial_signs/Artist_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 22.0
+margin/top = 42.0
+margin/right = 282.0
+margin/bottom = 59.0
+text = "The artist can use paint to make a block."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Tutorial_signs/Artist_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 46.0
+margin/top = 103.0
+margin/right = 306.0
+margin/bottom = 120.0
+text = "Press Control to use the paintbrush."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Tutorial_signs/Artist_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Laptop_Sign_Artist" type="Area2D" parent="Tutorial_signs"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -371,7 +466,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="TextureFrame" type="TextureFrame" parent="Laptop_Sign"]
+[node name="TextureFrame" type="TextureFrame" parent="Tutorial_signs/Laptop_Sign_Artist"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -381,10 +476,10 @@ margin/left = 1781.0
 margin/top = 444.0
 margin/right = 1841.0
 margin/bottom = 548.0
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 stretch_mode = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Laptop_Sign"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial_signs/Laptop_Sign_Artist"]
 
 transform/pos = Vector2( 1811.74, 500.718 )
 transform/scale = Vector2( 2.89445, 5.41231 )
@@ -392,92 +487,423 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Horn_Sign" type="Area2D" parent="."]
+[node name="Laptop_Sign" type="Area2D" parent="Tutorial_signs"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 6.36969, 0, 0, 5.41231, 2276.53, 940.759 )
+shapes/0/transform = Matrix32( 2.89445, 0, 0, 5.41231, 1811.74, 500.718 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="TextureFrame" type="TextureFrame" parent="Horn_Sign"]
+[node name="TextureFrame" type="TextureFrame" parent="Tutorial_signs/Laptop_Sign"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 2299.0
-margin/top = 892.0
-margin/right = 2359.0
-margin/bottom = 996.0
-texture = ExtResource( 11 )
+margin/left = 1781.0
+margin/top = 444.0
+margin/right = 1841.0
+margin/bottom = 548.0
+texture = ExtResource( 12 )
 stretch_mode = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horn_Sign"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial_signs/Laptop_Sign"]
 
-transform/pos = Vector2( 2276.53, 940.759 )
+transform/pos = Vector2( 1811.74, 500.718 )
+transform/scale = Vector2( 2.89445, 5.41231 )
+shape = SubResource( 3 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Coder_Tutorial2" type="Panel" parent="Tutorial_signs"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1260.0
+margin/top = 146.0
+margin/right = 1828.0
+margin/bottom = 395.0
+
+[node name="Label" type="Label" parent="Tutorial_signs/Coder_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 5.0
+margin/top = 51.0
+margin/right = 296.0
+margin/bottom = 68.0
+text = "Now you're the coder, so open the elevator."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Tutorial_signs/Coder_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 69.0
+margin/top = 101.0
+margin/right = 329.0
+margin/bottom = 118.0
+text = "Press Control to use the laptop."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Tutorial_signs/Coder_Tutorial2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Coder_Tutorial" type="Panel" parent="Tutorial_signs"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1260.0
+margin/top = 146.0
+margin/right = 1828.0
+margin/bottom = 395.0
+
+[node name="Label" type="Label" parent="Tutorial_signs/Coder_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 70.0
+margin/top = 53.0
+margin/right = 330.0
+margin/bottom = 70.0
+text = "The coder can hack locked doors."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Tutorial_signs/Coder_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 69.0
+margin/top = 101.0
+margin/right = 329.0
+margin/bottom = 118.0
+text = "Press Shift to switch to the coder."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Tutorial_signs/Coder_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Musician_Tutorial" type="Panel" parent="Tutorial_signs"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2015.0
+margin/top = 563.0
+margin/right = 2583.0
+margin/bottom = 812.0
+
+[node name="Label" type="Label" parent="Tutorial_signs/Musician_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 30.0
+margin/top = 51.0
+margin/right = 321.0
+margin/bottom = 68.0
+text = "The musician can blow his horn in fans."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Tutorial_signs/Musician_Tutorial"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 46.0
+margin/top = 101.0
+margin/right = 306.0
+margin/bottom = 118.0
+text = "Press Shift to switch to the musician."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Tutorial_signs/Musician_Tutorial"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Musician_Tutorial2" type="Panel" parent="Tutorial_signs"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2012.0
+margin/top = 556.0
+margin/right = 2580.0
+margin/bottom = 805.0
+
+[node name="Label" type="Label" parent="Tutorial_signs/Musician_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 16.0
+margin/top = 50.0
+margin/right = 307.0
+margin/bottom = 67.0
+text = "Now you're the musician. Blow on the fan."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="Tutorial_signs/Musician_Tutorial2"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 87.0
+margin/top = 99.0
+margin/right = 347.0
+margin/bottom = 116.0
+text = "Press Control to blow the horn."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tutorial_Confirm" type="TextureButton" parent="Tutorial_signs/Musician_Tutorial2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 207.0
+margin/top = 147.0
+margin/right = 358.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Horn_Sign_Coder" type="Area2D" parent="Tutorial_signs"]
+
+transform/pos = Vector2( 2304.54, 956.852 )
+transform/scale = Vector2( 0.924828, 0.958538 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 6.36969, 0, 0, 5.41231, 21.4092, -9.24042 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Tutorial_signs/Horn_Sign_Coder"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -3.0
+margin/top = -65.0
+margin/right = 57.0
+margin/bottom = 39.0
+texture = ExtResource( 13 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial_signs/Horn_Sign_Coder"]
+
+transform/pos = Vector2( 21.4092, -9.24042 )
 transform/scale = Vector2( 6.36969, 5.41231 )
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Musician" type="RigidBody2D" parent="."]
+[node name="Horn_Sign" type="Area2D" parent="Tutorial_signs"]
 
-process/pause_mode = 1
-transform/pos = Vector2( 8.11884, -15.0422 )
-transform/scale = Vector2( 0.915308, 1.025 )
+transform/pos = Vector2( 2304.54, 956.852 )
+transform/scale = Vector2( 0.924828, 0.958538 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 6.36969, 0, 0, 5.41231, 21.4092, -9.24042 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Tutorial_signs/Horn_Sign"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -3.0
+margin/top = -65.0
+margin/right = 57.0
+margin/bottom = 39.0
+texture = ExtResource( 13 )
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial_signs/Horn_Sign"]
+
+transform/pos = Vector2( 21.4092, -9.24042 )
+transform/scale = Vector2( 6.36969, 5.41231 )
+shape = SubResource( 3 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Water" type="Area2D" parent="."]
+
+transform/pos = Vector2( 704.484, 750.729 )
+transform/scale = Vector2( 0.592936, 0.65223 )
+input/pickable = true
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 3.70001, 0, 0, 3.74476, 611.101, -63.2274 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+
+transform/pos = Vector2( 611.101, -63.2274 )
+transform/scale = Vector2( 3.70001, 3.74476 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Artist" type="KinematicBody2D" parent="."]
+
+process/pause_mode = 2
+transform/pos = Vector2( 1, -11.2603 )
+transform/scale = Vector2( 1, 1.02049 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
+shapes/0/transform = Matrix32( 11.7123, 0, 0, 9.09133, 286.224, 454.514 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-mode = 3
-mass = 12.2449
-friction = 1.0
-bounce = 0.0
-gravity_scale = 20.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+collision/margin = 0.08
 
-[node name="Sprite" type="Sprite" parent="Musician"]
+[node name="Sprite" type="Sprite" parent="Artist"]
 
-transform/pos = Vector2( 15.7451, 462.526 )
+process/pause_mode = 1
+transform/pos = Vector2( 279.423, 460.889 )
 transform/scale = Vector2( 0.463943, 0.453309 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Musician"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Artist"]
 
-transform/pos = Vector2( 26.7035, 456.641 )
-transform/scale = Vector2( 11.8059, 9.3054 )
+process/pause_mode = 1
+transform/pos = Vector2( 286.224, 454.514 )
+transform/scale = Vector2( 11.7123, 9.09133 )
 shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
-[node name="RayCast2D" type="RayCast2D" parent="Musician"]
+[node name="RayCast2D" type="RayCast2D" parent="Artist"]
 
-transform/pos = Vector2( 16.4193, 437.601 )
+process/pause_mode = 1
+transform/pos = Vector2( 284.939, 434.328 )
 transform/scale = Vector2( 2.36516, 2.62874 )
 enabled = true
 cast_to = Vector2( 0, 50 )
 layer_mask = 1
 type_mask = 15
 
-[node name="Camera2D" type="Camera2D" parent="Musician"]
+[node name="Camera2D" type="Camera2D" parent="Artist"]
 
-transform/pos = Vector2( 27.3741, 444.818 )
-transform/scale = Vector2( 2.13992, 2.41318 )
+process/pause_mode = 1
+transform/pos = Vector2( 287.042, 444.874 )
+transform/scale = Vector2( 2.29946, 2.41144 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -495,38 +921,24 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Coder" type="RigidBody2D" parent="."]
+[node name="Coder" type="KinematicBody2D" parent="."]
 
 process/pause_mode = 1
-transform/pos = Vector2( 137.831, -11.2603 )
-transform/scale = Vector2( 0.958895, 1.02049 )
+transform/pos = Vector2( 118.033, -11.2603 )
+transform/scale = Vector2( 0.977774, 1.02049 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-mode = 3
-mass = 12.2449
-friction = 1.0
-bounce = 0.0
-gravity_scale = 20.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+collision/margin = 0.08
 
 [node name="Sprite" type="Sprite" parent="Coder"]
 
 transform/pos = Vector2( 15.7451, 462.526 )
 transform/scale = Vector2( 0.463943, 0.453309 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coder"]
 
@@ -547,11 +959,11 @@ type_mask = 15
 
 [node name="Camera2D" type="Camera2D" parent="Coder"]
 
-transform/pos = Vector2( 27.3741, 444.818 )
-transform/scale = Vector2( 2.13992, 2.41318 )
+transform/pos = Vector2( 19.0851, 423.442 )
+transform/scale = Vector2( 1.59641, 1.69542 )
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
@@ -559,70 +971,56 @@ limit/right = 10000000
 limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
-smoothing/enable = true
-smoothing/speed = 0.5
+smoothing/enable = false
+smoothing/speed = 5.0
 drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Artist" type="RigidBody2D" parent="."]
+[node name="Musician" type="KinematicBody2D" parent="."]
 
 process/pause_mode = 1
-transform/pos = Vector2( 1, -11.2603 )
-transform/scale = Vector2( 1, 1.02049 )
+transform/pos = Vector2( -17.951, -15.0422 )
+transform/scale = Vector2( 0.89275, 1.025 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 11.7123, 0, 0, 9.09133, 286.224, 454.514 )
+shapes/0/transform = Matrix32( 11.8059, 0, 0, 9.3054, 26.7035, 456.641 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-mode = 3
-mass = 12.2449
-friction = 1.0
-bounce = 0.0
-gravity_scale = 20.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+collision/margin = 0.08
 
-[node name="Sprite" type="Sprite" parent="Artist"]
+[node name="Sprite" type="Sprite" parent="Musician"]
 
-transform/pos = Vector2( 279.423, 460.889 )
-transform/scale = Vector2( 0.463943, 0.453309 )
-texture = ExtResource( 14 )
+transform/pos = Vector2( 10.6986, 460.348 )
+transform/scale = Vector2( 0.537436, 0.463881 )
+texture = ExtResource( 16 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Artist"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Musician"]
 
-transform/pos = Vector2( 286.224, 454.514 )
-transform/scale = Vector2( 11.7123, 9.09133 )
+transform/pos = Vector2( 26.7035, 456.641 )
+transform/scale = Vector2( 11.8059, 9.3054 )
 shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
-[node name="RayCast2D" type="RayCast2D" parent="Artist"]
+[node name="RayCast2D" type="RayCast2D" parent="Musician"]
 
-transform/pos = Vector2( 284.939, 434.328 )
+transform/pos = Vector2( 16.4193, 437.601 )
 transform/scale = Vector2( 2.36516, 2.62874 )
 enabled = true
 cast_to = Vector2( 0, 50 )
 layer_mask = 1
 type_mask = 15
 
-[node name="Camera2D" type="Camera2D" parent="Artist"]
+[node name="Camera2D" type="Camera2D" parent="Musician"]
 
-transform/pos = Vector2( 287.042, 444.874 )
-transform/scale = Vector2( 2.29946, 2.41144 )
+transform/pos = Vector2( 27.0456, 429.27 )
+transform/scale = Vector2( 1.79445, 2.06306 )
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
@@ -630,8 +1028,8 @@ limit/right = 10000000
 limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
-smoothing/enable = true
-smoothing/speed = 0.5
+smoothing/enable = false
+smoothing/speed = 5.0
 drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
@@ -663,7 +1061,7 @@ margin/left = 894.0
 margin/top = 546.0
 margin/right = 1242.0
 margin/bottom = 652.0
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 0
 
@@ -679,8 +1077,8 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 594.36, 525.117 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 21.142, 0, 0, 3.20948, 1338.61, 53.8578 )
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 36.988, 0, 0, 2.14483, -319.41, 46.3463 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -691,10 +1089,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
 
-visibility/behind_parent = true
-transform/pos = Vector2( 1338.61, 53.8578 )
-transform/scale = Vector2( 21.142, 3.20948 )
-shape = SubResource( 1 )
+transform/pos = Vector2( -319.41, 46.3463 )
+transform/scale = Vector2( 36.988, 2.14483 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
 
@@ -702,8 +1099,8 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 1142.91, 732 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 22.1272, 0, 0, 2.59221, -918.637, -158.491 )
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1.09042, 800.402, -172.169 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -714,17 +1111,17 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
 
-transform/pos = Vector2( -918.637, -158.491 )
-transform/scale = Vector2( 22.1272, 2.59221 )
-shape = SubResource( 1 )
+transform/pos = Vector2( 800.402, -172.169 )
+transform/scale = Vector2( 1, 1.09042 )
+shape = SubResource( 8 )
 trigger = false
 _update_shape_index = 0
 
 [node name="elevator_floor" type="StaticBody2D" parent="Platforms"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
-shapes/0/transform = Matrix32( 0.64756, 0, 0, 1.62543, 2408.3, 1028.69 )
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 0.881149, 0, 0, 2.12225, 2409.33, 1021.09 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -735,17 +1132,19 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/elevator_floor"]
 
-transform/pos = Vector2( 2408.3, 1028.69 )
-transform/scale = Vector2( 0.64756, 1.62543 )
-shape = SubResource( 5 )
+transform/pos = Vector2( 2409.33, 1021.09 )
+transform/scale = Vector2( 0.881149, 2.12225 )
+shape = SubResource( 9 )
 trigger = false
 _update_shape_index = 0
 
 [node name="exit_floor" type="StaticBody2D" parent="Platforms"]
 
+transform/pos = Vector2( 1933.51, 1492.01 )
+transform/scale = Vector2( 0.889408, 0.948699 )
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
-shapes/0/transform = Matrix32( 1.09671, 0, 0, 1.62543, 2273.99, 1510.57 )
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 0.818815, 0, 0, 2.3125, 380.065, 12.7397 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -756,30 +1155,10 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/exit_floor"]
 
-transform/pos = Vector2( 2273.99, 1510.57 )
-transform/scale = Vector2( 1.09671, 1.62543 )
-shape = SubResource( 5 )
+transform/pos = Vector2( 380.065, 12.7397 )
+transform/scale = Vector2( 0.818815, 2.3125 )
+shape = SubResource( 10 )
 trigger = false
-_update_shape_index = 0
-
-[node name="Water" type="Area2D" parent="."]
-
-transform/pos = Vector2( 422, 1102 )
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 25.104, 0, 0, 4.10721, 690.751, -423.709 )
-shapes/0/trigger = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-
-transform/pos = Vector2( 690.751, -423.709 )
-transform/scale = Vector2( 25.104, 4.10721 )
-shape = SubResource( 1 )
-trigger = true
 _update_shape_index = 0
 
 [node name="Ground" type="Area2D" parent="."]
@@ -787,7 +1166,6 @@ _update_shape_index = 0
 transform/pos = Vector2( 378.89, 2826.4 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 114.673, 0, 0, 4.10721, 795.677, -411.677 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -796,7 +1174,6 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 
-transform/pos = Vector2( 795.677, -411.677 )
 transform/scale = Vector2( 114.673, 4.10721 )
 shape = SubResource( 1 )
 trigger = true
@@ -826,7 +1203,7 @@ margin/left = -1044.0
 margin/top = -564.0
 margin/right = -666.0
 margin/bottom = 22.0
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 expand = true
 stretch_mode = 0
 
@@ -843,7 +1220,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 603.36, 531.117 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.46883, 0, 0, 62.6726, 2026.78, 509.692 )
+shapes/0/transform = Matrix32( 1.46883, 0, 0, 62.6726, 2044.87, 509.692 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -854,7 +1231,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 
-transform/pos = Vector2( 2026.78, 509.692 )
+transform/pos = Vector2( 2044.87, 509.692 )
 transform/scale = Vector2( 1.46883, 62.6726 )
 shape = SubResource( 1 )
 trigger = false
@@ -931,324 +1308,9 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
-[node name="Artist_Tutorial" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 99.0
-margin/top = 121.0
-margin/right = 667.0
-margin/bottom = 370.0
-
-[node name="Label" type="Label" parent="Artist_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 22.0
-margin/top = 42.0
-margin/right = 282.0
-margin/bottom = 59.0
-text = "The artist can use paint to make a block."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="Artist_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 46.0
-margin/top = 103.0
-margin/right = 306.0
-margin/bottom = 120.0
-text = "Press Control to use the paintbrush."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tutorial_Confirm" type="TextureButton" parent="Artist_Tutorial"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 207.0
-margin/top = 147.0
-margin/right = 358.0
-margin/bottom = 229.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 25 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="Coder_Tutorial" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1260.0
-margin/top = 146.0
-margin/right = 1828.0
-margin/bottom = 395.0
-
-[node name="Label" type="Label" parent="Coder_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 70.0
-margin/top = 53.0
-margin/right = 330.0
-margin/bottom = 70.0
-text = "The coder can hack locked doors."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="Coder_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 69.0
-margin/top = 101.0
-margin/right = 329.0
-margin/bottom = 118.0
-text = "Press Shift to switch to the coder."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tutorial_Confirm" type="TextureButton" parent="Coder_Tutorial"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 207.0
-margin/top = 147.0
-margin/right = 358.0
-margin/bottom = 229.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 25 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="Coder_Tutorial2" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1260.0
-margin/top = 146.0
-margin/right = 1828.0
-margin/bottom = 395.0
-
-[node name="Label" type="Label" parent="Coder_Tutorial2"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 5.0
-margin/top = 51.0
-margin/right = 296.0
-margin/bottom = 68.0
-text = "Now you're the coder, so open the elevator."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="Coder_Tutorial2"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 69.0
-margin/top = 101.0
-margin/right = 329.0
-margin/bottom = 118.0
-text = "Press Control to use the laptop."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tutorial_Confirm" type="TextureButton" parent="Coder_Tutorial2"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 207.0
-margin/top = 147.0
-margin/right = 358.0
-margin/bottom = 229.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 25 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="Musician_Tutorial" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 2064.0
-margin/top = 563.0
-margin/right = 2632.0
-margin/bottom = 812.0
-
-[node name="Label" type="Label" parent="Musician_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 30.0
-margin/top = 51.0
-margin/right = 321.0
-margin/bottom = 68.0
-text = "The musician can blow his horn in fans."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="Musician_Tutorial"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 46.0
-margin/top = 101.0
-margin/right = 306.0
-margin/bottom = 118.0
-text = "Press Shift to switch to the musician."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tutorial_Confirm" type="TextureButton" parent="Musician_Tutorial"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 207.0
-margin/top = 147.0
-margin/right = 358.0
-margin/bottom = 229.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 25 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="Musician_Tutorial2" type="Panel" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 2013.0
-margin/top = 640.0
-margin/right = 2581.0
-margin/bottom = 889.0
-
-[node name="Label" type="Label" parent="Musician_Tutorial2"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 16.0
-margin/top = 50.0
-margin/right = 307.0
-margin/bottom = 67.0
-text = "Now you're the musician. Blow on the fan."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="Musician_Tutorial2"]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 87.0
-margin/top = 99.0
-margin/right = 347.0
-margin/bottom = 116.0
-text = "Press Control to blow the horn."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tutorial_Confirm" type="TextureButton" parent="Musician_Tutorial2"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 207.0
-margin/top = 147.0
-margin/right = 358.0
-margin/bottom = 229.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 25 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 26 )
+stream/stream = ExtResource( 27 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -20.0
@@ -1266,11 +1328,15 @@ autostart = false
 
 [connection signal="body_enter" from="Exit Door" to="." method="_on_Exit_Door_body_enter"]
 
-[connection signal="body_enter" from="Paint_Sign" to="." method="_on_Paint_Sign_body_enter"]
+[connection signal="body_enter" from="Tutorial_signs/Paint_Sign" to="Tutorial_signs" method="_on_Paint_Sign_body_enter"]
 
-[connection signal="body_enter" from="Laptop_Sign" to="." method="_on_Laptop_Sign_body_enter"]
+[connection signal="body_enter" from="Tutorial_signs/Laptop_Sign_Artist" to="." method="_on_Laptop_Sign_Artist_body_enter"]
 
-[connection signal="body_enter" from="Horn_Sign" to="." method="_on_Horn_Sign_body_enter"]
+[connection signal="body_enter" from="Tutorial_signs/Laptop_Sign" to="Tutorial_signs" method="_on_Laptop_Sign_body_enter"]
+
+[connection signal="body_enter" from="Tutorial_signs/Horn_Sign_Coder" to="." method="_on_Horn_Sign_Coder_body_enter"]
+
+[connection signal="body_enter" from="Tutorial_signs/Horn_Sign" to="Tutorial_signs" method="_on_Horn_Sign_body_enter"]
 
 [connection signal="body_enter" from="Water" to="." method="_on_Water_body_enter"]
 
