@@ -131,7 +131,6 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
-move_speed = 500
 
 [node name="Background" type="TextureFrame" parent="."]
 
@@ -273,6 +272,7 @@ speed = 400
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform"]
 
+transform/pos = Vector2( 2506.83, -220.558 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -316,6 +316,7 @@ speed = 300
 
 [node name="Moving_platform" type="StaticBody2D" parent="Moving platform2"]
 
+transform/pos = Vector2( 2046.95, -219.95 )
 transform/scale = Vector2( 43.8363, 2.47025 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -1166,6 +1167,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 378.89, 2826.4 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 114.673, 0, 0, 4.10721, 803.266, -1125.1 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1174,6 +1176,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 
+transform/pos = Vector2( 803.266, -1125.1 )
 transform/scale = Vector2( 114.673, 4.10721 )
 shape = SubResource( 1 )
 trigger = true
